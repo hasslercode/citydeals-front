@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { DiscountsRoutingModule } from './discounts-routing.module';
 import { CreateDiscountComponent } from './ui/pages/create-discount/create-discount.component';
-import { HomeDiscountsComponent } from './ui/pages/home-discounts/home-discounts.component';
+import { ShowDiscountsComponent } from './ui/pages/show-discounts/show-discounts.component';
 
 
 @NgModule({
   declarations: [
     CreateDiscountComponent,
-    HomeDiscountsComponent
+    ShowDiscountsComponent
   ],
   imports: [
     CommonModule,
     DiscountsRoutingModule
+  ],
+  providers: [
+    DatePipe
   ]
 })
 export class DiscountsModule { }

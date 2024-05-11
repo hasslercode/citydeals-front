@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,10 @@ import { CategoryModule } from './modules/category/category.module';
 import { DiscountsModule } from './modules/discounts/discounts.module';
 import { PricingModule } from './modules/pricing/pricing.module';
 import { SupermarketModule } from './modules/supermarket/supermarket.module';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
@@ -24,7 +28,7 @@ import { SupermarketModule } from './modules/supermarket/supermarket.module';
     SupermarketModule,
     SharedModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
