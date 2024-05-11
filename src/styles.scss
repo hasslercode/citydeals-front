@@ -113,35 +113,35 @@ p {
 }
 
 .btn-primary {
-  background-color: $primary-color;
-  color: #fff; /* Texto en contraste */
-  border: 1px solid $primary-color; /* Borde */
+  background-color: $primary-color !important;
+  color: #fff !important; /* Texto en contraste */
+  border: 1px solid $primary-color !important;
   transition: background-color 0.3s; /* Transición suave solo para el fondo */
   &:hover {
     color: #fff;
-    background-color: lighten($primary-color, 20%); /* Color de fondo ligeramente más claro en hover */
+    background-color: lighten($primary-color, 20%) !important; /* Color de fondo ligeramente más claro en hover */
   }
 }
 
 .btn-secondary {
-  background-color: $background-color-secondary;
-  color: #fff; /* Texto en contraste */
-  border: 1px solid #fff; /* Borde */
+  background-color: $background-color-secondary !important;
+  color: $primary-color !important; /* Texto en contraste */
+  border: 1px solid #fff !important; /* Borde */
   transition: background-color 0.3s; /* Transición suave solo para el fondo */
   &:hover {
     color: #fff;
-    background-color: lighten($background-color, 20%); /* Color de fondo ligeramente más claro en hover */
+    background-color: lighten($background-color, 20%) !important; /* Color de fondo ligeramente más claro en hover */
   }
 }
 
 .btn-tertiary {
-  background-color: $tertiary-color;
-  color: #fff; /* Texto en contraste */
-  border: 1px solid $tertiary-color; /* Borde */
+  background-color: $tertiary-color !important;
+  color: #fff !important; /* Texto en contraste */
+  border: 1px solid $tertiary-color !important; /* Borde */
   transition: background-color 0.3s; /* Transición suave solo para el fondo */
   &:hover {
     color: #fff;
-    background-color: lighten($tertiary-color, 20%); /* Color de fondo ligeramente más claro en hover */
+    background-color: lighten($tertiary-color, 20%) !important; /* Color de fondo ligeramente más claro en hover */
   }
 }
 

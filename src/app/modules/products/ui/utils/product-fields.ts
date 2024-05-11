@@ -94,3 +94,36 @@ export const PRODUCT_FORM_FIELDS: FormDataFormat = {
   errorMessage:
     'Se han encontrado errores en la entrada de datos. Por favor, corrige los campos resaltados.',
 };
+
+
+export const SEARCH_PRODUCT_FORM: FormDataFormat = {
+  header: {
+    title: 'Buscar Producto',
+    subtitle: 'Utiliza el formulario para buscar un producto:'
+  },
+  contents: {
+    buttonsText: {
+      searchButton: 'Buscar',
+      cancelButton: ''
+    },
+    formElements: [
+      {
+        requestId: 'search',
+        required: true,
+        label: '',
+        key: 'productName',
+        enabled: true,
+        functionality: 'search',
+        type: 'text',
+        formControlName: 'productName',
+        validators: [],
+        placeholder: 'Ingresa el nombre del producto'
+      }
+    ]
+  },
+  informationMessage: {
+    title: 'Información',
+    subtitle: 'Resultado de la búsqueda'
+  },
+  errorMessage: ''
+};

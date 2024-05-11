@@ -1,1 +1,13 @@
-<p>search-product works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-6 text-end">
+      <div class="d-inline-block">
+        <button class="btn btn-primary" (click)="redirectToCreateProduct()">
+          Añadir Producto <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-dynamic-form [formData]="formData" (submitted)="searchProduct($event)"></app-dynamic-form>
+</div>
+<app-modal #modal (accept)="handleAccept($event)"></app-modal>
