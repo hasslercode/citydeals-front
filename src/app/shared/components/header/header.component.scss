@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/variables';
+/* header.component.scss */
+
+header {
+  padding: 20px 0;
+  background: #9bb4dd;
+  .navbar {
+    border-radius: 25px;
+    .navbar-nav .nav-link {
+      color: $primary-color;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.logo-text {
+  font-size: 50px;
+  color: $primary-color;
+  font-weight: 800;
+  font-style: italic;
+}
+.display-4{
+  color: #d5d5d5;
+}
+
+.img-logo{
+  width: 150px;
+  border-radius: 100%;
+  margin: 0 auto;
+  display: block;
+}

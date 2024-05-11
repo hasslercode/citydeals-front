@@ -1,0 +1,20 @@
+<div [style.display]="displayModal ? 'block' : 'none'" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ title }}</h5>
+        <button *ngIf="isCancellable" type="button" class="close" (click)="closeModal($event)">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{ description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="isCancellable" type="button" class="btn button-secondary" (click)="closeModal($event)">{{ textBtnLeft || 'Cancelar' }}</button>
+        <button [disabled]="primaryButtonDisabled" type="button" class="btn button-primary" (click)="onAccept($event)">{{ textBtn || 'Aceptar' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop custom-backdrop" [style.display]="displayModal ? 'block' : 'none'"></div>

@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/variables';
+.logo {
+  text-align: center;
+  animation: scale-up 0.5s ease-in;
+}
+
+.logo-text {
+  font-size: 82px;
+  color: $primary-color;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

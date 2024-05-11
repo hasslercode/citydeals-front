@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row m-0 d-flex justify-content-center">
+    <div class="col-md-12">
+      <div class="principal-container justify-content-center">
+        <div class="main-form">
+          <a [routerLink]="[routerPathLink]" href="#">
+            <p class="text-link"><i class="bi bi-box-arrow-left"></i> Regresar</p>
+          </a>
+          <h2 class="main-title">{{headerData.title}}</h2>
+          <div class="form-body">
+            <form [formGroup]="customForm" (ngSubmit)="submitForm()">
+              <div class="row">
+                <ng-container *ngFor="let field of formElements; let i = index">
+                  <div class="form-group" [ngClass]="getDynamicClass(field.type, formElements.length)">
+                    <label [for]="field.formControlName">{{ field.label }}</label>
+                    <ng-container [ngTemplateOutlet]="fieldTemplate" [ngTemplateOutletContext]="{ field: field }"></ng-container>
+                  </div>
+                </ng-container>
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-4">
+                  <div class="button-group">
+                    <button *ngIf="buttonsText?.searchButton" type="submit" class="btn button-primary"
+                      [disabled]="customForm.invalid">{{buttonsText.searchButton}}</button>
+                    <button *ngIf="buttonsText?.cancelButton" type="submit" class="btn button-secondary"
+                      [disabled]="customForm.invalid">{{buttonsText.cancelButton}}</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #fieldTemplate let-field="field">
+  <ng-container [formGroup]="customForm" [ngSwitch]="field.type">
+    <input *ngSwitchCase="'text'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'password'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'time'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'number'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'date'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'datetime-local'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input">
+    <input *ngSwitchCase="'checkbox'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-check-input">
+    <select (change)="onSelectChange(field.formControlName)" required *ngSwitchCase="'select'" [id]="field.formControlName" [formControlName]="field.formControlName"
+      class="form-control input">
+      <option value="undefined" hidden disabled>Choose everything</option>
+      <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
+    </select>
+    <textarea *ngSwitchCase="'textarea'" [placeholder]="field.placeholder" [id]="field.formControlName"
+      [formControlName]="field.formControlName" class="form-control input"></textarea>
+
+      <div *ngIf="customForm.get(field.formControlName)!.touched && customForm.get(field.formControlName)!.invalid">
+        <div class="text-danger">
+          {{ getErrorMessage(field) }}
+        </div>
+      </div>
+
+  </ng-container>
+</ng-template>

@@ -1,0 +1,23 @@
+<!-- sidebar.component.html -->
+
+<aside class="text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Menú</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-link-normal" (click)="navigateTo('/home')" routerLinkActive="active">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-link-normal" routerLink="/candidates/search" routerLinkActive="active">Búsqueda Avanzada</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-link-normal" routerLink="/companies/register" routerLinkActive="active">Configuración</a>
+          </li>
+          <!-- Agrega más enlaces de navegación según tus rutas -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>
