@@ -8,6 +8,25 @@
       </div>
     </div>
   </div>
-  <app-dynamic-form [formData]="formData" (submitted)="searchProduct($event)"></app-dynamic-form>
+  <div class="row justify-content-center">
+    <div class="col-md-6  text-center">
+      <app-dynamic-form [formData]="formData" (submitted)="searchProduct($event)"></app-dynamic-form>
+    </div>
+  </div>
+
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let product of listProducts">
+      <div *ngIf="product.status == true" class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+        <app-product-card (editProductEvent)="onEditProduct($event)" [editMode]="true"
+          [product]="product"></app-product-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
 <app-modal #modal (accept)="handleAccept($event)"></app-modal>

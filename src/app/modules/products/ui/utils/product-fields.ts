@@ -8,7 +8,7 @@ export const PRODUCT_FORM_FIELDS: FormDataFormat = {
   contents: {
     buttonsText: {
       searchButton: 'Guardar',
-      cancelButton: 'Cancelar',
+      cancelButton: '',
     },
     formElements: [
       {
