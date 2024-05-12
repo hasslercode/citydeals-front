@@ -11,6 +11,7 @@ import { PricingModule } from './modules/pricing/pricing.module';
 import { SupermarketModule } from './modules/supermarket/supermarket.module';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { CartModule } from './modules/cart/cart.module';
 
 registerLocaleData(localeEs);
 
@@ -26,7 +27,8 @@ registerLocaleData(localeEs);
     DiscountsModule,
     PricingModule,
     SupermarketModule,
-    SharedModule
+    SharedModule,
+    CartModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]

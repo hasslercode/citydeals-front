@@ -35,6 +35,13 @@ const routes: Routes = [
         (m) => m.PricingRoutingModule
       ),
   },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./modules/cart/cart-routing.module').then(
+        (m) => m.CartRoutingModule
+      ),
+  },
 ];
 
 @NgModule({
