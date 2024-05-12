@@ -37,18 +37,6 @@ export class CreateProductComponent {
 
   registerProduct(data: any) {
     console.log(data);
-    // data.profile = 'CANDIDATO';
-    // const candidate = { ...data } as CandidateRegistration;
-    // this.candidateUseCase.createCandidate(candidate).subscribe({
-    //   next: (response) => {
-    //     if (response.status == 'success') {
-    //       this.handleSuccess();
-    //     }
-    //   },
-    //   error: (error) => {
-    //     this.handleError();
-    //   },
-    // });
   }
 
   handleSuccess() {

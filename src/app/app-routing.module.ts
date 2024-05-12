@@ -21,6 +21,13 @@ const routes: Routes = [
         (m) => m.DiscountsRoutingModule
       ),
   },
+  {
+    path: 'supermarkets',
+    loadChildren: () =>
+      import('./modules/supermarket/supermarket-routing.module').then(
+        (m) => m.SupermarketRoutingModule
+      ),
+  },
 ];
 
 @NgModule({
