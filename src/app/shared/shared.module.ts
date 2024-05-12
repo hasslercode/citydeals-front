@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SuperMarketCardComponent } from './components/supermarket-card/supermarket-card.component';
+import { ProductFullInfoCardComponent } from './components/product-full-info-card/product-full-info-card.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SuperMarketCardComponent } from './components/supermarket-card/supermar
     ModalComponent,
     ProductCardComponent,
     SuperMarketCardComponent,
+    ProductFullInfoCardComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   exports: [
@@ -29,7 +31,8 @@ import { SuperMarketCardComponent } from './components/supermarket-card/supermar
     DynamicFormComponent,
     ModalComponent,
     ProductCardComponent,
-    SuperMarketCardComponent
+    SuperMarketCardComponent,
+    ProductFullInfoCardComponent
   ],
 })
 export class SharedModule {}
