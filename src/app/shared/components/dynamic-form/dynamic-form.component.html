@@ -13,7 +13,8 @@
                 <ng-container *ngFor="let field of formElements; let i = index">
                   <div class="form-group" [ngClass]="getDynamicClass(field.type, formElements.length)">
                     <label *ngIf="field.label.length > 0" [for]="field.formControlName">{{ field.label }}</label>
-                    <ng-container [ngTemplateOutlet]="fieldTemplate" [ngTemplateOutletContext]="{ field: field }"></ng-container>
+                    <ng-container [ngTemplateOutlet]="fieldTemplate"
+                      [ngTemplateOutletContext]="{ field: field }"></ng-container>
                   </div>
                 </ng-container>
               </div>
@@ -47,23 +48,30 @@
       [formControlName]="field.formControlName" class="form-control input">
     <input *ngSwitchCase="'date'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
       [formControlName]="field.formControlName" class="form-control input">
-    <input *ngSwitchCase="'datetime-local'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
-      [formControlName]="field.formControlName" class="form-control input">
-    <input *ngSwitchCase="'checkbox'" [type]="field.type" [placeholder]="field.placeholder" [id]="field.formControlName"
-      [formControlName]="field.formControlName" class="form-check-input">
-    <select (change)="onSelectChange(field.formControlName)" required *ngSwitchCase="'select'" [id]="field.formControlName" [formControlName]="field.formControlName"
-      class="form-control input">
+    <input *ngSwitchCase="'datetime-local'" [type]="field.type" [placeholder]="field.placeholder"
+      [id]="field.formControlName" [formControlName]="field.formControlName" class="form-control input">
+
+     <div *ngSwitchCase="'checkbox'">
+      <div *ngFor="let option of field.options">
+        <label class="checkbox-inline">
+          <input type="checkbox" [formControlName]="field.formControlName" [value]="option.value" (change)="onCheckBoxChange(field)"> {{ option.label }}
+        </label>
+      </div>
+    </div>
+
+    <select (change)="onSelectChange(field.formControlName)" required *ngSwitchCase="'select'"
+      [id]="field.formControlName" [formControlName]="field.formControlName" class="form-control input">
       <option value="undefined" hidden disabled>Choose everything</option>
       <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
     </select>
     <textarea *ngSwitchCase="'textarea'" [placeholder]="field.placeholder" [id]="field.formControlName"
       [formControlName]="field.formControlName" class="form-control input"></textarea>
 
-      <div *ngIf="customForm.get(field.formControlName)!.touched && customForm.get(field.formControlName)!.invalid">
-        <div class="text-danger">
-          {{ getErrorMessage(field) }}
-        </div>
+    <div *ngIf="customForm.get(field.formControlName)!.touched && customForm.get(field.formControlName)!.invalid">
+      <div class="text-danger">
+        {{ getErrorMessage(field) }}
       </div>
+    </div>
 
   </ng-container>
 </ng-template>

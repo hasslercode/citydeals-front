@@ -63,15 +63,40 @@ Regresar: any;
   }
   submitForm() {
     if (this.customForm.valid && this.customForm.value) {
-      this.submitted.emit(this.customForm.value);
+      const formValueToSend: any = {};
+      for (const field of this.formElements) {
+        if (field.type === 'checkbox') {
+          formValueToSend[field.formControlName] = this.getSelectedCheckboxOptions(field.formControlName);
+        } else {
+          formValueToSend[field.formControlName] = this.customForm.value[field.formControlName];
+        }
+      }
+      this.submitted.emit(formValueToSend);
     }
   }
-
   onSelectChange(selectId: string) {
     const selectedValue = this.customForm.value[selectId];
     this.selectChange.emit({ id: selectId, value: selectedValue });
   }
 
+  onCheckBoxChange(field: any) {
+    if (field.type === 'checkbox') {
+      const control = this.customForm.get(field.formControlName);
+      if (control) {
+        let selectedOptions = control.value || [];
+        if (selectedOptions.includes(field.value)) {
+          selectedOptions = selectedOptions.filter((value: any) => value !== field.value);
+        } else {
+          selectedOptions.push(field.value);
+        }
+        control.setValue(selectedOptions);
+      }
+    }
+  }
+
+  getSelectedCheckboxOptions(field: any): any[] {
+    return this.customForm.value[field.formControlName] || [];
+  }
   getErrorMessage(field: any): string {
     const control = this.customForm.get(field.formControlName);
     const touched = control!.touched;
@@ -92,20 +117,28 @@ Regresar: any;
   getDynamicClass(fieldType: string, formElementsLength: number): string {
     let colsClass: string;
     if (fieldType === 'textarea') {
-      colsClass = 'col-md-12';
+      colsClass = 'col-lg-12 col-md-12 ';
+    } else if (fieldType === 'checkbox') {
+      colsClass = 'col-lg-12 col-md-12';
     } else {
-      if (formElementsLength === 2) {
-        colsClass = 'col-lg-6 col-md-6 col-sm-12';
-      } else if (formElementsLength === 3) {
-        colsClass = 'col-lg-4 col-md-6 col-sm-12';
-      } else if (formElementsLength === 4) {
-        colsClass = 'col-lg-6 col-md-6 col-sm-12';
-      } else {
-        colsClass = 'col-lg-12 col-md-12 col-sm-12';
+      switch (formElementsLength) {
+        case 2:
+          colsClass = 'col-lg-6 col-md-6 col-sm-12';
+          break;
+        case 3:
+          colsClass = 'col-lg-4 col-md-6 col-sm-12';
+          break;
+        case 4:
+          colsClass = 'col-lg-3 col-md-6 col-sm-12';
+          break;
+        default:
+          colsClass = 'col-lg-4 col-md-4 col-sm-12';
+          break;
       }
     }
     return colsClass;
   }
+
 
   createForm(formElements: any[]): void {
     const formControlsConfig: { [key: string]: any } = {};

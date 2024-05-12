@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Discount } from '../../../domain/model/discount.model';
 import { SHOW_DISCOUNTS_MOCK } from '../../../../../shared/mocks/discounts/discounts-mock';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-discounts',
@@ -12,12 +13,16 @@ export class ShowDiscountsComponent {
   discounts: Discount[] = [];
   currentDate: Date;
 
-  constructor(private datePipe: DatePipe) {
+  constructor(private datePipe: DatePipe, private router: Router) {
     this.currentDate = new Date();
   }
 
   ngOnInit(): void {
     this.loadDiscounts();
+  }
+
+  redirectToCreateDiscount(){
+    this.router.navigate(['discounts/create']);
   }
 
   loadDiscounts() {
