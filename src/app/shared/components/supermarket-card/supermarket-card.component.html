@@ -1,0 +1,33 @@
+<div *ngIf="supermarket" class="card">
+  <div class="card-body">
+    <div *ngIf="!showFormEdit; else editModeTemplate" class="card">
+      <img class="card-img-top" [src]="supermarket.image" alt="Imagen del supermercado">
+      <div class="card-body">
+        <h5 class="card-title">{{ supermarket.name }}</h5>
+        <p class="card-text">Ciudad: {{ supermarket.city_id }}</p>
+        <!-- <p class="card-text badge bg-primary">Estado: {{ supermarket.status ? 'Activo' : 'Inactivo' }}</p> -->
+      </div>
+    </div>
+    <ng-template #editModeTemplate>
+      <label for="name" class="my-2">Nombre:</label>
+      <input id="name" class="form-control input my-2" type="text" [(ngModel)]="editingSupermarket.name" />
+      <label for="city" class="my-2">Ciudad:</label>
+      <select id="city" class="form-control select my-2" [(ngModel)]="editingSupermarket.city_id">
+        <option value="1">Bogotá</option>
+        <option value="2">Medellín</option>
+        <option value="3">Cali</option>
+      </select>
+      <label for="status" class="my-2">Estado:</label>
+      <select id="status" class="form-control select my-2 mb-4" [(ngModel)]="editingSupermarket.status">
+        <option value=true>Activo</option>
+        <option value=false>Inactivo</option>
+      </select>
+      <button class="btn btn-primary btn-sm edit-button greenButton my-2" (click)="saveSupermarket()">
+        <i class="bi bi-check"></i>
+      </button>
+    </ng-template>
+    <button *ngIf="editMode && !showFormEdit" class="btn btn-primary btn-sm edit-button my-2" (click)="editSupermarket()">
+      <i class="bi bi-pencil"></i>
+    </button>
+  </div>
+</div>

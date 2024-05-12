@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { SuperMarketCardComponent } from './components/supermarket-card/supermarket-card.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     DynamicFormComponent,
     ModalComponent,
     ProductCardComponent,
+    SuperMarketCardComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   exports: [
@@ -26,7 +28,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     SidebarComponent,
     DynamicFormComponent,
     ModalComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    SuperMarketCardComponent
   ],
 })
 export class SharedModule {}

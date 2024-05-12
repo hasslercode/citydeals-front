@@ -193,3 +193,21 @@ p {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.edit-button {
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
+  border-radius: 50%;
+  width: 30px; /* Ajusta el ancho según sea necesario */
+  height: 30px; /* Ajusta la altura según sea necesario */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greenButton{
+  background-color: #3dae25 !important;
+  border: #3dae25 !important;
+}

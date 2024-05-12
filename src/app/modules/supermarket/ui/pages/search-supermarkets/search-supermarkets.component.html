@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-6 text-end">
+      <div class="d-inline-block">
+        <button class="btn btn-primary" (click)="redirectToCreateSupermarket()">
+          Añadir Supermercado <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6  text-center">
+      <app-dynamic-form [formData]="formData" (submitted)="searchSupermarket($event)"></app-dynamic-form>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="row">
+    <ng-container *ngFor="let supermarket of listSupermarkets">
+      <div *ngIf="supermarket.status == true" class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+        <app-supermarket-card (editSupermarketEvent)="onEditSuperMarket($event)" [editMode]="true" [supermarket]="supermarket"></app-supermarket-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<app-modal #modal (accept)="handleAccept($event)"></app-modal>
