@@ -7,6 +7,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ModalComponent } from './components/modal/modal.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ModalComponent } from './components/modal/modal.component';
     FooterComponent,
     DynamicFormComponent,
     ModalComponent,
+    ProductCardComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   exports: [
@@ -23,7 +25,8 @@ import { ModalComponent } from './components/modal/modal.component';
     FooterComponent,
     SidebarComponent,
     DynamicFormComponent,
-    ModalComponent
+    ModalComponent,
+    ProductCardComponent
   ],
 })
 export class SharedModule {}

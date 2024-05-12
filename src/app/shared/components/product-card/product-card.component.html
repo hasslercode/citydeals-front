@@ -1,0 +1,32 @@
+<div *ngIf="product" class="card">
+  <div class="card-body">
+    <ng-container *ngIf="!showFormEdit; else editModeTemplate">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p class="card-text badge bg-primary">Categoría: {{ product.category_id }}</p>
+    </ng-container>
+    <ng-template #editModeTemplate>
+      <label for="name" class="my-2">Nombre:</label>
+      <input id="name" class="form-control input my-2" type="text" [(ngModel)]="editingProduct.name" />
+      <label for="description" class="my-2">Descripción:</label>
+      <textarea rows="8" id="description" class="form-control textarea my-2" [(ngModel)]="editingProduct.description"></textarea>
+      <label for="category" class="my-2">Categoría:</label>
+      <select id="category" class="form-control select my-2" [(ngModel)]="editingProduct.category_id">
+        <option value="1">Categoría 1</option>
+        <option value="2">Categoría 2</option>
+        <option value="3">Categoría 3</option>
+      </select>
+      <label for="status" class="my-2">Estado:</label>
+      <select id="status" class="form-control select my-2 mb-4" [(ngModel)]="editingProduct.status">
+        <option value=true>Activo</option>
+        <option value=false>Inactivo</option>
+      </select>
+      <button class="btn btn-primary btn-sm edit-button greenButton my-2" (click)="saveProduct()">
+        <i class="bi bi-check"></i>
+      </button>
+    </ng-template>
+    <button *ngIf="editMode && !showFormEdit" class="btn btn-primary btn-sm edit-button my-2" (click)="editProduct()">
+      <i class="bi bi-pencil"></i>
+    </button>
+  </div>
+</div>

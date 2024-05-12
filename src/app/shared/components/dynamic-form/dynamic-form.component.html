@@ -3,16 +3,16 @@
     <div class="col-md-12">
       <div class="principal-container justify-content-center">
         <div class="main-form">
-          <a [routerLink]="[routerPathLink]" href="#">
+          <!-- <a [routerLink]="[routerPathLink]" href="#">
             <p class="text-link"><i class="bi bi-box-arrow-left"></i> Regresar</p>
-          </a>
+          </a> -->
           <h2 class="main-title">{{headerData.title}}</h2>
           <div class="form-body">
             <form [formGroup]="customForm" (ngSubmit)="submitForm()">
               <div class="row">
                 <ng-container *ngFor="let field of formElements; let i = index">
                   <div class="form-group" [ngClass]="getDynamicClass(field.type, formElements.length)">
-                    <label [for]="field.formControlName">{{ field.label }}</label>
+                    <label *ngIf="field.label.length > 0" [for]="field.formControlName">{{ field.label }}</label>
                     <ng-container [ngTemplateOutlet]="fieldTemplate" [ngTemplateOutletContext]="{ field: field }"></ng-container>
                   </div>
                 </ng-container>
@@ -20,9 +20,9 @@
               <div class="row d-flex justify-content-center">
                 <div class="col-md-4">
                   <div class="button-group">
-                    <button *ngIf="buttonsText?.searchButton" type="submit" class="btn button-primary"
+                    <button *ngIf="buttonsText?.searchButton" type="submit" class="btn btn-primary"
                       [disabled]="customForm.invalid">{{buttonsText.searchButton}}</button>
-                    <button *ngIf="buttonsText?.cancelButton" type="submit" class="btn button-secondary"
+                    <button *ngIf="buttonsText?.cancelButton" type="submit" class="btn btn-secondary"
                       [disabled]="customForm.invalid">{{buttonsText.cancelButton}}</button>
                   </div>
                 </div>

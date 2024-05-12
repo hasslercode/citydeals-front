@@ -95,18 +95,15 @@ Regresar: any;
       colsClass = 'col-md-12';
     } else {
       if (formElementsLength === 2) {
-        colsClass = 'col-lg';
+        colsClass = 'col-lg-6 col-md-6 col-sm-12';
       } else if (formElementsLength === 3) {
-        colsClass = 'col-lg-6';
+        colsClass = 'col-lg-4 col-md-6 col-sm-12';
       } else {
-        colsClass = 'col-lg-4';
+        colsClass = 'col-lg-12 col-md-12 col-sm-12';
       }
-      colsClass += ' col-md-12';
     }
     return colsClass;
   }
-
-
 
   createForm(formElements: any[]): void {
     const formControlsConfig: { [key: string]: any } = {};
