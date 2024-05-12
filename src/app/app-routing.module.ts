@@ -28,6 +28,13 @@ const routes: Routes = [
         (m) => m.SupermarketRoutingModule
       ),
   },
+  {
+    path: 'pricing',
+    loadChildren: () =>
+      import('./modules/pricing/pricing-routing.module').then(
+        (m) => m.PricingRoutingModule
+      ),
+  },
 ];
 
 @NgModule({

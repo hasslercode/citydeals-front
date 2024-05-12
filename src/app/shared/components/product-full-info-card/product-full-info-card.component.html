@@ -1,0 +1,22 @@
+<div class="card">
+  <img *ngIf="product.image" [src]="product.image" class="card-img-top" alt="Imagen del producto">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text"><small class="text-muted badge bg-secondary">Categoría: {{ product.category_id }}</small></p>
+    <h6 class="card-subtitle mb-2 text-muted">Precio</h6>
+    <ul class="list-group">
+      <li class="list-group-item cursor-pointer" *ngFor="let pricingProduct of product.pricing">
+        <div title="{{ pricingProduct.update_date | date }}" class="d-flex justify-content-between align-items-center">
+          <div>
+            Supermercado {{ pricingProduct.supermarket_id }}
+          </div>
+          <div>
+            <span class="badge bg-secondary greenButton">{{ pricingProduct.price | currency:'COP':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
