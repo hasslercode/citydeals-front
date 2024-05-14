@@ -51,13 +51,16 @@
     <input *ngSwitchCase="'datetime-local'" [type]="field.type" [placeholder]="field.placeholder"
       [id]="field.formControlName" [formControlName]="field.formControlName" class="form-control input">
 
-     <div *ngSwitchCase="'checkbox'">
-      <div *ngFor="let option of field.options">
-        <label class="checkbox-inline">
-          <input type="checkbox" [formControlName]="field.formControlName" [value]="option.value" (change)="onCheckBoxChange(field)"> {{ option.label }}
-        </label>
+      <div *ngSwitchCase="'checkbox'">
+        <div [formGroup]="getFormControl(field.formControlName)">
+          <div *ngFor="let option of field.options">
+            <label class="checkbox-inline">
+              <input type="checkbox" [formControlName]="option.value"> {{ option.label }}
+            </label>
+          </div>
+        </div>
       </div>
-    </div>
+
 
     <select (change)="onSelectChange(field.formControlName)" required *ngSwitchCase="'select'"
       [id]="field.formControlName" [formControlName]="field.formControlName" class="form-control input">
