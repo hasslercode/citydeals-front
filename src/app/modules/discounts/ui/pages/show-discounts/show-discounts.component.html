@@ -1,10 +1,5 @@
 <div class="container">
 
-  <div *ngIf="loading" class="text-center">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Cargando...</span>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-6 offset-md-6 text-end">
@@ -19,37 +14,48 @@
   <h3 class="mt-3">Hoy es {{ getDayOfWeek() }}, {{ getFormattedDateTime() }}</h3>
 
 
-  <div *ngIf="!loading && errorMessage" class="alert alert-danger">
-    {{ errorMessage }}
-  </div>
 
-  <div *ngIf="!loading && pricedProducts.length > 0">
-    <div *ngFor="let product of pricedProducts" class="card mb-3">
-      <div class="card-header">
-        <h3>{{ product.name }}</h3>
-      </div>
-      <div class="card-body">
-        <p class="card-text">{{ product.description }}</p>
-        <div *ngFor="let price of product.prices" class="mb-2">
-          <p>
-            <span class="badge text-black badge-secondary">{{ price.supermarket.name }} ({{ price.supermarket.city }})</span>
-          </p>
-          <p>Precio: <span class="badge badge-primary"> $ {{ price.price | currency: 'COP' }}</span></p>
-          <p *ngIf="price.discount">
-            Descuento: <span class="badge badge-success">{{ price.discount.percentage }}%</span>
-            <br>
-            Precio con descuento: <span class="badge badge-danger text-black"> $ {{ price.discount.discountedPrice | currency: 'COP' }}</span>
-          </p>
-          <p *ngIf="!price.discount">
-            <span class="badge badge-info">Sin descuento</span>
-          </p>
+  <div class="container mt-4">
+    <div *ngIf="discountsToday.length > 0" class="row">
+      <div class="col-md-6 mb-4" *ngFor="let discount of discountsToday">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ discount.product ? discount.product.name : discount.category!.name }}
+              <span *ngIf="discount.product" class="badge bg-primary">
+                Producto
+              </span>
+              <span *ngIf="!discount.product" class="badge bg-info">
+                Categoría
+              </span>
+            </h5>
+            <p class="card-text">
+              <strong>Descuento:</strong> {{ discount.percentage }}%
+              <br>
+              <strong>Fecha de inicio:</strong> {{ discount.date_start | date }}
+              <br>
+              <strong>Fecha de fin:</strong> {{ discount.date_end | date }}
+            </p>
+            <div>
+              <p class="card-text">
+                <strong>Supermercado:</strong> {{ discount.supermarket.name }} ({{ discount.supermarket.city }})
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              Creado el {{ discount.created_at | date }}
+            </small>
+          </div>
         </div>
       </div>
     </div>
+    <div *ngIf="discountsToday.length === 0">
+      <p class="alert alert-warning">
+        No hay descuentos disponibles para hoy.
+      </p>
+    </div>
   </div>
 
-  <div *ngIf="!loading && pricedProducts.length === 0" class="alert alert-info">
-    No hay productos con descuentos disponibles en esta categoría.
-  </div>
 
 </div>

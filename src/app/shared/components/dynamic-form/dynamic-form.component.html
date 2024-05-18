@@ -62,7 +62,7 @@
       </div>
 
 
-    <select (change)="onSelectChange(field.formControlName)" required *ngSwitchCase="'select'"
+    <select (change)="onSelectChange(field.formControlName)" *ngSwitchCase="'select'"
       [id]="field.formControlName" [formControlName]="field.formControlName" class="form-control input">
       <option value="undefined" hidden disabled>Choose everything</option>
       <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>

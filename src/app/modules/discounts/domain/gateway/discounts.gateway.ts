@@ -1,6 +1,8 @@
 import { Observable } from 'rxjs';
-import { PricedProductsByCategory } from '../model/discount.model';
+import { DiscountsToday, NewDiscount } from '../model/discount.model';
 
 export abstract class DiscountsGateway {
-  abstract getPricedProductsByCategory(categoryId: number): Observable<PricedProductsByCategory[]>;
+
+ abstract getDiscountsToday(): Observable<DiscountsToday[]>;
+ abstract createNewDiscount(newDiscount: NewDiscount): Observable<any>;
 }

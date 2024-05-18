@@ -12,14 +12,14 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
     },
     formElements: [
       {
-        requestId: 'supermarket',
+        requestId: 'supermarketId',
         required: true,
         label: 'Supermercado',
-        key: 'supermarket',
+        key: 'supermarketId',
         enabled: true,
         functionality: 'A',
         type: 'select',
-        formControlName: 'supermarket',
+        formControlName: 'supermarketId',
         validators: [
           { type: 'required', value: true, message: 'El Supermercado es obligatorio' }
         ],
@@ -30,17 +30,15 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
         ]
       },
       {
-        requestId: 'product',
-        required: true,
+        requestId: 'productId',
+        required: false,
         label: 'Producto',
-        key: 'product',
+        key: 'productId',
         enabled: true,
         functionality: 'A',
         type: 'select',
-        formControlName: 'product',
-        validators: [
-          { type: 'required', value: true, message: 'El Producto es obligatorio' }
-        ],
+        formControlName: 'productId',
+        validators: [],
         options: [
           { label: 'Producto 1', value: '1' },
           { label: 'Producto 2', value: '2' },
@@ -48,56 +46,72 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
         ]
       },
       {
-        requestId: 'discount',
+        requestId: 'categoryId',
+        required: false,
+        label: 'Categoria',
+        key: 'categoryId',
+        enabled: true,
+        functionality: 'A',
+        type: 'select',
+        formControlName: 'categoryId',
+        validators: [],
+        options: [
+          { label: 'Categoria 1', value: '1' },
+          { label: 'Categoria 2', value: '2' },
+          { label: 'Categoria 3', value: '3' }
+        ]
+      },
+      {
+        requestId: 'percentage',
         required: true,
         label: 'Descuento',
-        key: 'discount',
+        key: 'percentage',
         enabled: true,
         functionality: 'A',
         placeholder: 'Ingresa el descuento',
         type: 'number',
-        formControlName: 'discount',
+        formControlName: 'percentage',
         validators: [
           { type: 'required', value: true, message: 'El Descuento es obligatorio' }
         ]
       },
       {
-        requestId: 'start_date',
+        requestId: 'date_start',
         required: true,
         label: 'Fecha de Inicio',
-        key: 'start_date',
+        key: 'date_start',
         enabled: true,
         functionality: 'A',
         type: 'date',
         placeholder: 'Ingresa la fecha de inicio',
-        formControlName: 'start_date',
+        formControlName: 'date_start',
         validators: [
           { type: 'required', value: true, message: 'La Fecha de Inicio es obligatoria' }
         ]
       },
       {
-        requestId: 'end_date',
+        requestId: 'date_end',
         required: true,
         label: 'Fecha de Fin',
-        key: 'end_date',
+        key: 'date_end',
         enabled: true,
         functionality: 'A',
         type: 'date',
         placeholder: 'Ingresa la fecha de fin',
-        formControlName: 'end_date',
+        formControlName: 'date_end',
         validators: [
           { type: 'required', value: true, message: 'La Fecha de Fin es obligatoria' }
         ]
       },
       {
-        requestId: 'days_of_week',
+        requestId: 'days_week',
         required: true,
         label: 'Selecciona los dias de la semana',
-        key: 'days_of_week',
+        key: 'days_week',
         enabled: true,
         functionality: 'A',
         type: 'checkbox',
-        formControlName: 'days_of_week',
+        formControlName: 'days_week',
         options: [
           { label: 'Lunes', value: '1' },
           { label: 'Martes', value: '2' },

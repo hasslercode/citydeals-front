@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { DiscountsGateway } from '../../domain/gateway/discounts.gateway';
-import { PricedProductsByCategory } from '../../domain/model/discount.model';
-import { API_URL } from '../../../../core/api.constants';
+import { DiscountsToday, NewDiscount } from '../../domain/model/discount.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class DiscountsService extends DiscountsGateway {
-
-  private readonly apiUrl = API_URL;
+export class DiscountService extends DiscountsGateway {
+  private baseUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) {
     super();
   }
 
-  getPricedProductsByCategory(categoryId: number): Observable<PricedProductsByCategory[]> {
-    return this.http.get<PricedProductsByCategory[]>(`${this.apiUrl}/products/category/${categoryId}`);
+  getDiscountsToday(): Observable<DiscountsToday[]> {
+    const url = `${this.baseUrl}/discounts/today`;
+    return this.http.get<DiscountsToday[]>(url);
+  }
+
+  createNewDiscount(newDiscount: NewDiscount): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/discounts`, newDiscount);
   }
 }

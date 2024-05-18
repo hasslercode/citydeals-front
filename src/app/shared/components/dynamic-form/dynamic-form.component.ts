@@ -70,6 +70,7 @@ export class DynamicFormComponent implements OnInit {
     }
   }
   submitForm() {
+    let canSubmit = true;
     if (this.customForm.valid && this.customForm.value) {
       const formValueToSend: any = {};
       for (const field of this.formElements) {
@@ -82,13 +83,16 @@ export class DynamicFormComponent implements OnInit {
               selectedValues.push(value);
             }
           });
+          selectedValues.length == 0 ? canSubmit = false: canSubmit = true;
           formValueToSend[field.formControlName] = selectedValues;
         } else {
           formValueToSend[field.formControlName] =
             this.customForm.value[field.formControlName];
         }
       }
-      this.submitted.emit(formValueToSend);
+      if(canSubmit){
+        this.submitted.emit(formValueToSend);
+      }
     }
   }
 

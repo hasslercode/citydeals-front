@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DiscountsGateway } from '../gateway/discounts.gateway';
-import { PricedProductsByCategory } from '../model/discount.model';
+import { DiscountsToday, NewDiscount } from '../model/discount.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,13 @@ import { PricedProductsByCategory } from '../model/discount.model';
 export class DiscountsUsecase {
   constructor(private discountsGateway: DiscountsGateway) {}
 
-  getPricedProductsByCategory(categoryId: number): Observable<PricedProductsByCategory[]> {
-    return this.discountsGateway.getPricedProductsByCategory(categoryId);
+  getDiscountsToday(): Observable<DiscountsToday[]> {
+    return this.discountsGateway.getDiscountsToday();
   }
+
+  createNewDiscount(newDiscount: NewDiscount): Observable<any> {
+    return this.discountsGateway.createNewDiscount(newDiscount);
+  }
+
+
 }
