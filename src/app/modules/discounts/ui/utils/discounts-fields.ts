@@ -23,27 +23,7 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
         validators: [
           { type: 'required', value: true, message: 'El Supermercado es obligatorio' }
         ],
-        options: [
-          { label: 'Supermercado 1', value: '1' },
-          { label: 'Supermercado 2', value: '2' },
-          { label: 'Supermercado 3', value: '3' }
-        ]
-      },
-      {
-        requestId: 'productId',
-        required: false,
-        label: 'Producto',
-        key: 'productId',
-        enabled: true,
-        functionality: 'A',
-        type: 'select',
-        formControlName: 'productId',
-        validators: [],
-        options: [
-          { label: 'Producto 1', value: '1' },
-          { label: 'Producto 2', value: '2' },
-          { label: 'Producto 3', value: '3' }
-        ]
+        options: []
       },
       {
         requestId: 'categoryId',
@@ -55,11 +35,19 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
         type: 'select',
         formControlName: 'categoryId',
         validators: [],
-        options: [
-          { label: 'Categoria 1', value: '1' },
-          { label: 'Categoria 2', value: '2' },
-          { label: 'Categoria 3', value: '3' }
-        ]
+        options: []
+      },
+      {
+        requestId: 'productId',
+        required: false,
+        label: 'Producto',
+        key: 'productId',
+        enabled: true,
+        functionality: 'A',
+        type: 'select',
+        formControlName: 'productId',
+        validators: [],
+        options: []
       },
       {
         requestId: 'percentage',

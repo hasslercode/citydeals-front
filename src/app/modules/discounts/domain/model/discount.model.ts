@@ -1,7 +1,6 @@
 
 export interface DiscountsToday {
   id:         number;
-  type:       string;
   percentage: number;
   date_start: Date;
   date_end:   Date;
@@ -22,7 +21,6 @@ interface DiscountInfo {
 }
 
 export interface NewDiscount {
-  type:          string;
   supermarketId: number;
   categoryId:    number | null;
   productId:    number | null;

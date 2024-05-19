@@ -1,4 +1,4 @@
-import { PricingProduct } from "src/app/modules/pricing/domain/model/pricing.model";
+import { PricingProduct } from 'src/app/modules/pricing/domain/model/pricing.model';
 
 export interface Product {
   id: number;
@@ -7,40 +7,46 @@ export interface Product {
   image?: string;
   category_id: number;
   status: boolean;
-  pricing?: PricingProduct[]
 }
 
-export interface PricedProductsByCategory {
+export interface ListProduct {
   id:          number;
   name:        string;
   description: string;
-  category:    Category;
-  prices:      Price[];
+  image:       null | string;
+}
+
+export interface PricedProductsByCategory {
+  id: number;
+  name: string;
+  description: string;
+  image?: string;
+  category: Category;
+  prices: Price[];
 }
 
 interface Price {
   supermarket: Supermarket;
-  price:       number;
-  discount:    Discount | null;
+  price: number;
+  discount: Discount | null;
 }
 
 interface Category {
-  id:      number;
-  name:    string;
+  id: number;
+  name: string;
   status?: boolean;
-  image:   null;
-  city?:   string;
+  image: null;
+  city?: string;
 }
 
 interface Discount {
-  percentage:      number;
+  percentage: number;
   discountedPrice: number;
 }
 
 interface Supermarket {
-  id:    number;
-  name:  string;
-  city:  string;
+  id: number;
+  name: string;
+  city: string;
   image: null;
 }
-

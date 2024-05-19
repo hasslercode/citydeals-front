@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PricedProductsByCategory } from '../model/product.model';
+import { ListProduct, PricedProductsByCategory } from '../model/product.model';
 import { ProductsGateway } from '../gateway/products.gateway';
 
 @Injectable({
@@ -12,4 +12,9 @@ export class ProductsUsecase {
   getPricedProductsByCategory(categoryId: number): Observable<PricedProductsByCategory[]> {
     return this.discountsGateway.getPricedProductsByCategory(categoryId);
   }
+
+  getProductsByCategory(categoryId: number): Observable<ListProduct[]>{
+    return this.discountsGateway.getProductsByCategory(categoryId);
+  }
+
 }

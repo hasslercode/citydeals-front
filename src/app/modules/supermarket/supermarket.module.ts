@@ -6,6 +6,9 @@ import { CreateSupermarketComponent } from './ui/pages/create-supermarket/create
 import { ShowSupermarketsComponent } from './ui/pages/show-supermarkets/show-supermarkets.component';
 import { SearchSupermarketsComponent } from './ui/pages/search-supermarkets/search-supermarkets.component';
 import { SharedModule } from '../../shared/shared.module';
+import { SupermarketUseCase } from './domain/usecase/supermarket.usecase';
+import { SupermarketGateway } from './domain/gateway/supermarket.gateway';
+import { SupermarketService } from './infraestructure/driven-adapter/supermarket.service';
 
 
 @NgModule({
@@ -18,6 +21,13 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     SupermarketRoutingModule,
     SharedModule
+  ],
+  providers:[
+    SupermarketUseCase,
+    {
+      provide: SupermarketGateway,
+      useClass: SupermarketService,
+    },
   ]
 })
 export class SupermarketModule { }
