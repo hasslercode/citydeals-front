@@ -16,6 +16,10 @@ export class ProductsService extends ProductsGateway {
     super();
   }
 
+  getAllProducts(): Observable<ListProduct[]> {
+    return this.http.get<ListProduct[]>(`${this.apiUrl}/products`);
+  }
+
   getProductsByCategory(categoryId: number): Observable<ListProduct[]> {
     return this.http.get<ListProduct[]>(`${this.apiUrl}/products/category/${categoryId}`);
   }
@@ -23,4 +27,9 @@ export class ProductsService extends ProductsGateway {
   getPricedProductsByCategory(categoryId: number): Observable<PricedProductsByCategory[]> {
     return this.http.get<PricedProductsByCategory[]>(`${this.apiUrl}/products/category/${categoryId}/prices`);
   }
+
+  createNewProduct(newProduct: ListProduct): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/products`, newProduct);
+  }
+
 }

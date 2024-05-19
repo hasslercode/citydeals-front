@@ -10,6 +10,7 @@ import {
 import { ListCategory } from 'src/app/modules/category/domain/model/category.model';
 import { CategoryUseCase } from 'src/app/modules/category/domain/usecase/category.usecase';
 import { ProductsUsecase } from 'src/app/modules/products/domain/usecase/products.usecase';
+import { DEFAULT_IMAGE } from 'src/app/shared/interfaces/responses';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class CompareProductsComponent implements OnInit {
   formData: FormDataFormat = SEARCH_PRICING_PRODUCT_FORM;
   listPricingProducts: PricedProductsByCategory[] = [];
   categories: ListCategory[] = [];
+  defaultImage: string = DEFAULT_IMAGE;
 
   constructor(
     private router: Router,
@@ -31,7 +33,10 @@ export class CompareProductsComponent implements OnInit {
   loadCategories(): void {
     this.categoryUsecase.getListCategories().subscribe(
       (categories: ListCategory[]) => {
-        this.categories = categories;
+        this.categories = categories.map(category => ({
+          ...category,
+          image: category.image || this.defaultImage
+        }));
         console.log('Categories loaded successfully:', categories);
       },
       (error) => {

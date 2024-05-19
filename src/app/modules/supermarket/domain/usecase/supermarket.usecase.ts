@@ -13,4 +13,9 @@ export class SupermarketUseCase {
   getListSupermarket(): Observable<ListSupermarket[]> {
     return this.supermarketGateway.getSupermarkets();
   }
+
+  create(newItem: ListSupermarket): Observable<any> {
+    return this.supermarketGateway.create(newItem);
+  }
+
 }

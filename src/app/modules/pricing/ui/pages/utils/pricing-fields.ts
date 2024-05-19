@@ -12,19 +12,16 @@ export const PRICING_PRODUCT_FORM_FIELDS: FormDataFormat = {
     },
     formElements: [
       {
-        requestId: 'categorias',
+        requestId: 'categoryId',
         required: true,
         label: 'Categoria',
         placeholder: 'Selecciona una categoria',
-        key: 'category_id',
+        key: 'categoryId',
         enabled: true,
         functionality: '',
         type: 'select',
-        formControlName: 'category_id',
-        options: [
-          { label: 'Categoria 1', value: 1 },
-          { label: 'Categoria 2', value: 2 },
-        ],
+        formControlName: 'categoryId',
+        options: [],
         validators: [
           {
             type: 'required',
@@ -34,19 +31,16 @@ export const PRICING_PRODUCT_FORM_FIELDS: FormDataFormat = {
         ],
       },
       {
-        requestId: 'field_id_1',
+        requestId: 'productId',
         required: true,
         label: 'Producto',
         placeholder: 'Selecciona el producto',
-        key: 'product_id',
+        key: 'productId',
         enabled: true,
         functionality: '',
         type: 'select',
-        formControlName: 'product_id',
-        options: [
-          { label: 'Producto 1', value: 1 },
-          { label: 'Producto 2', value: 2 },
-        ],
+        formControlName: 'productId',
+        options: [],
         validators: [
           {
             type: 'required',
@@ -56,7 +50,26 @@ export const PRICING_PRODUCT_FORM_FIELDS: FormDataFormat = {
         ],
       },
       {
-        requestId: 'field_id_3',
+        requestId: 'supermarketId',
+        required: true,
+        label: 'Supermercado',
+        placeholder: 'Ingresa el ID del supermercado',
+        key: 'supermarketId',
+        enabled: true,
+        functionality: '',
+        type: 'select',
+        formControlName: 'supermarketId',
+        options: [ ],
+        validators: [
+          {
+            type: 'required',
+            value: true,
+            message: 'Este campo es obligatorio.',
+          },
+        ],
+      },
+      {
+        requestId: 'price',
         required: true,
         label: 'Precio del Producto',
         placeholder: 'Ingresa el precio del producto',
@@ -75,26 +88,18 @@ export const PRICING_PRODUCT_FORM_FIELDS: FormDataFormat = {
         ],
       },
       {
-        requestId: 'field_id_4',
+        requestId: 'date',
         required: true,
-        label: 'Supermercado',
-        placeholder: 'Ingresa el ID del supermercado',
-        key: 'supermarket_id',
+        label: 'Fecha',
+        key: 'date',
         enabled: true,
-        functionality: '',
-        type: 'select',
-        formControlName: 'supermarket_id',
-        options: [
-          { label: 'supermercado 1', value: 1 },
-          { label: 'supermercado 2', value: 2 },
-        ],
+        functionality: 'A',
+        type: 'date',
+        placeholder: 'Ingresa la fecha',
+        formControlName: 'date',
         validators: [
-          {
-            type: 'required',
-            value: true,
-            message: 'Este campo es obligatorio.',
-          },
-        ],
+          { type: 'required', value: true, message: 'La Fecha es obligatoria' }
+        ]
       },
     ],
   },

@@ -12,15 +12,15 @@ export const SUPERMARKET_FORM_FIELDS: FormDataFormat = {
     },
     formElements: [
       {
-        requestId: 'field_id_1',
+        requestId: 'name',
         required: true,
         label: 'Nombre del supermercado',
         placeholder: 'Ingresa el nombre del supermercado',
-        key: 'supermarket_name',
+        key: 'name',
         enabled: true,
         functionality: '',
         type: 'text',
-        formControlName: 'supermarket_name',
+        formControlName: 'name',
         options: [],
         validators: [
           {
@@ -31,19 +31,22 @@ export const SUPERMARKET_FORM_FIELDS: FormDataFormat = {
         ],
       },
       {
-        requestId: 'field_id_2',
+        requestId: 'city',
         required: true,
         label: 'Ciudad del supermercado',
         placeholder: 'Selecciona la ciudad del supermercado',
-        key: 'supermarket_city',
+        key: 'city',
         enabled: true,
         functionality: 'select',
         type: 'select',
-        formControlName: 'supermarket_city',
+        formControlName: 'city',
         options: [
-          { label: 'Bogotá', value: 1 },
-          { label: 'Medellín', value: 2 },
-          { label: 'Cali', value: 3 },
+          { label: 'Barranquilla', value: "Barranquilla" },
+          { label: 'Soledad', value: "Soledad" },
+          { label: 'Cartagena', value: "Cartagena" },
+          { label: 'Bogotá', value: "Bogotá" },
+          { label: 'Medellín', value: "Medellín" },
+          { label: 'Cali', value: "Cali" },
         ],
         validators: [
           {

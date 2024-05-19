@@ -16,5 +16,12 @@ export class ProductsUsecase {
   getProductsByCategory(categoryId: number): Observable<ListProduct[]>{
     return this.discountsGateway.getProductsByCategory(categoryId);
   }
+  getAllProducts(): Observable<ListProduct[]>{
+    return this.discountsGateway.getAllProducts();
+  }
+
+  createNewProduct(newProduct: ListProduct): Observable<any> {
+    return this.discountsGateway.createNewProduct(newProduct);
+  }
 
 }

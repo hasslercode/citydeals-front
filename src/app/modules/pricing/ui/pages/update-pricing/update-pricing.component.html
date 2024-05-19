@@ -1,2 +1,2 @@
-<app-dynamic-form [formData]="formData" (submitted)="registerPricingProduct($event)"></app-dynamic-form>
+<app-dynamic-form [formData]="formData" (selectChange)="handleSelectChange($event)" (submitted)="registerPricingProduct($event)"></app-dynamic-form>
 <app-modal #modal (accept)="handleAccept($event)"></app-modal>

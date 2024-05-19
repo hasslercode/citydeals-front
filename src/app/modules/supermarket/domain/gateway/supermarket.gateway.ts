@@ -4,4 +4,5 @@ import { ListSupermarket } from '../model/supermarket.model';
 
 export abstract class SupermarketGateway {
   abstract getSupermarkets(): Observable<ListSupermarket[]>;
+  abstract create(newItem: ListSupermarket): Observable<any>;
 }

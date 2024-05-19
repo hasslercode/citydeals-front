@@ -1,4 +1,3 @@
-import { PricingProduct } from 'src/app/modules/pricing/domain/model/pricing.model';
 
 export interface Product {
   id: number;
@@ -28,6 +27,7 @@ export interface PricedProductsByCategory {
 interface Price {
   supermarket: Supermarket;
   price: number;
+  last_date: Date;
   discount: Discount | null;
 }
 

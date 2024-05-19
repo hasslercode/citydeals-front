@@ -126,7 +126,7 @@ export class CreateDiscountComponent implements OnInit {
     if (!data) return;
 
     const newDiscount: NewDiscount = { ...data };
-    newDiscount[newDiscount.productId ? 'categoryId' : 'productId'] = null;
+    newDiscount.productId = newDiscount.productId || null;
 
     this.discountsUsecase.createNewDiscount(newDiscount).subscribe(
       () => this.handleSuccess(),
@@ -158,9 +158,7 @@ export class CreateDiscountComponent implements OnInit {
   }
 
   handleAccept(event: any) {
-    // if (this.isRegistered) {
-    //   this.router.navigate(['/login']);
-    // }
+    this.router.navigate(['/discounts/results']);
   }
 
   redirectToLogin() {

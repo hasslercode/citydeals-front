@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Product } from 'src/app/modules/products/domain/model/product.model';
+import { ListProduct, Product } from 'src/app/modules/products/domain/model/product.model';
+import { DEFAULT_IMAGE } from '../../interfaces/responses';
 
 @Component({
   selector: 'app-product-card',
@@ -8,11 +9,12 @@ import { Product } from 'src/app/modules/products/domain/model/product.model';
 })
 export class ProductCardComponent {
 
-  @Input() product!: Product;
+  @Input() product!: ListProduct;
   @Input() editMode = false;
   showFormEdit = false;
-  @Output() editProductEvent = new EventEmitter<Product>();
-  editingProduct!: Product;
+  @Output() editProductEvent = new EventEmitter<ListProduct>();
+  editingProduct!: ListProduct;
+  defaultImage: string = DEFAULT_IMAGE;
 
   constructor() { }
 

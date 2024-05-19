@@ -126,6 +126,9 @@ export class DynamicFormComponent implements OnInit {
       colsClass = 'col-lg-12 col-md-12';
     } else {
       switch (formElementsLength) {
+        case 1:
+          colsClass = 'col-lg-12 col-md-12 col-sm-12';
+          break;
         case 2:
           colsClass = 'col-lg-6 col-md-6 col-sm-12';
           break;
@@ -136,7 +139,7 @@ export class DynamicFormComponent implements OnInit {
           colsClass = 'col-lg-3 col-md-6 col-sm-12';
           break;
         default:
-          colsClass = 'col-lg-4 col-md-4 col-sm-12';
+          colsClass = 'col-lg-4 col-md-4 col-sm-4';
           break;
       }
     }

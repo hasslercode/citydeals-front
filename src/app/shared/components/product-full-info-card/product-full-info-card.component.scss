@@ -1,0 +1,26 @@
+.bagde-container{
+  text-align: center;
+}
+
+.badge-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f41414;
+  color: white;
+  border-radius: 50px;
+  width: 35px;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  height: 16px;
+}
+
+.font-size-10px{
+  font-size: 10px;
+}
+
+.price-style{
+  color: #469037;
+  font-size: 16px;
+}

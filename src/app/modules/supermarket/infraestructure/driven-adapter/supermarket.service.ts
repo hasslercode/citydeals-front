@@ -19,4 +19,8 @@ export class SupermarketService extends SupermarketGateway {
   getSupermarkets(): Observable<ListSupermarket[]> {
     return this.http.get<ListSupermarket[]>(`${this.apiUrl}/supermarkets`);
   }
+
+  create(newItem: ListSupermarket): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/supermarkets`, newItem);
+  }
 }

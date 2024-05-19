@@ -107,7 +107,7 @@ export const DISCOUNT_FORM_FIELDS: FormDataFormat = {
           { label: 'Jueves', value: '4' },
           { label: 'Viernes', value: '5' },
           { label: 'Sábado', value: '6' },
-          { label: 'Domingo', value: '7' },
+          { label: 'Domingo', value: '0' },
         ],
         validators: []
       }
