@@ -148,11 +148,8 @@ export class UpdatePricingComponent {
   setModal() {
     this.modalService.setModal(this.modalInfo);
   }
-
   handleAccept(event: any) {
-    // if (this.isRegistered) {
-    //   this.router.navigate(['/login']);
-    // }
+    this.router.navigate(['/pricing/update']);
   }
 
   redirectToLogin() {

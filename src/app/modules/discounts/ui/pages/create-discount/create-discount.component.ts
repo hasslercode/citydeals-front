@@ -124,10 +124,8 @@ export class CreateDiscountComponent implements OnInit {
 
   registerDiscount(data: any) {
     if (!data) return;
-
     const newDiscount: NewDiscount = { ...data };
     newDiscount.productId = newDiscount.productId || null;
-
     this.discountsUsecase.createNewDiscount(newDiscount).subscribe(
       () => this.handleSuccess(),
       (error) => this.handleError(error)
