@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SuperMarket } from '../../../modules/supermarket/domain/model/supermarket.model';
+import { ListSupermarket, SuperMarket } from '../../../modules/supermarket/domain/model/supermarket.model';
 
 @Component({
   selector: 'app-supermarket-card',
@@ -8,11 +8,11 @@ import { SuperMarket } from '../../../modules/supermarket/domain/model/supermark
 })
 export class SuperMarketCardComponent {
 
-  @Input() supermarket!: SuperMarket;
+  @Input() supermarket!: ListSupermarket;
   @Input() editMode = false;
   showFormEdit = false;
-  @Output() editSupermarketEvent = new EventEmitter<SuperMarket>();
-  editingSupermarket!: SuperMarket;
+  @Output() editSupermarketEvent = new EventEmitter<ListSupermarket>();
+  editingSupermarket!: ListSupermarket;
 
   ngOnInit() {
     this.editingSupermarket = { ...this.supermarket };

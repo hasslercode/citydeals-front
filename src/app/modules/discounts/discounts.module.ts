@@ -4,6 +4,11 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { DiscountsRoutingModule } from './discounts-routing.module';
 import { CreateDiscountComponent } from './ui/pages/create-discount/create-discount.component';
 import { ShowDiscountsComponent } from './ui/pages/show-discounts/show-discounts.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { DiscountsUsecase } from './domain/usecase/discounts.usecase';
+import { DiscountsGateway } from './domain/gateway/discounts.gateway';
+import { DiscountService } from './infraestructure/driven-adapter/discount.service';
 
 
 @NgModule({
@@ -13,10 +18,17 @@ import { ShowDiscountsComponent } from './ui/pages/show-discounts/show-discounts
   ],
   imports: [
     CommonModule,
-    DiscountsRoutingModule
+    DiscountsRoutingModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    DiscountsUsecase,
+    {
+      provide: DiscountsGateway,
+      useClass: DiscountService,
+    },
   ]
 })
 export class DiscountsModule { }

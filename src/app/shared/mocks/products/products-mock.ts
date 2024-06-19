@@ -36,7 +36,6 @@ for (let i = 1; i <= 10; i++) {
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia condimentum odio eu dictum. Praesent eu libero non nulla rhoncus. ${i}`,
     category_id: (i % 3) + 1,
     status: i % 2 === 0 ? true : false,
-    pricing: LIST_PRICING_PRODUCTS_MOCK
   });
 }
 
@@ -47,7 +46,6 @@ export const ONE_PRODUCT_MOCK: Product = {
   image: `/assets/images/defaultImage.jpg`,
   category_id: 1,
   status: true,
-  pricing: LIST_PRICING_PRODUCTS_MOCK
 };
 
 

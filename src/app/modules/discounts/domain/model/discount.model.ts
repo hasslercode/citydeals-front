@@ -1,11 +1,31 @@
-export interface Discount {
-  type: string;
-  store: string;
-  product: string | null;
-  category: string | null;
-  discount: number;
-  start_date: string;
-  end_date: string;
-  creation_date: string;
-  status: string;
+
+export interface DiscountsToday {
+  id:         number;
+  percentage: number;
+  date_start: Date;
+  date_end:   Date;
+  created_at: Date;
+  supermarket: DiscountInfo;
+  status:     boolean;
+  product:    DiscountInfo | null;
+  category:   DiscountInfo | null;
+}
+
+interface DiscountInfo {
+  id:           number;
+  name:         string;
+  status?:      boolean;
+  image:        null;
+  description?: string;
+  city?:        string;
+}
+
+export interface NewDiscount {
+  supermarketId: number;
+  categoryId:    number | null;
+  productId:    number | null;
+  percentage:    number;
+  date_start:    Date;
+  date_end:      Date;
+  days_week:     number[];
 }

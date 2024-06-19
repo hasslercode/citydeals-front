@@ -8,14 +8,34 @@
       </div>
     </div>
   </div>
-  <div class="row justify-content-center">
+  <!-- <div class="row justify-content-center">
     <div class="col-md-6 text-center">
       <app-dynamic-form [formData]="formData" (submitted)="searchPricingProduct($event)"></app-dynamic-form>
+    </div>
+  </div> -->
+</div>
+
+<div *ngIf="showCategories" class="container">
+  <h1>Listado de Categorías</h1>
+  <div class="row pt-3">
+    <div class="col-md-2 col-6 pb-4 justify-content-center" *ngFor="let category of categories">
+      <div
+        class="rounded-circle justify-content-center d-flex border text-center align-content-center p-2 mb-4 customCategory"
+        (click)="handleCategoryClick(category)"
+        [ngStyle]="{ 'background-image': 'url(' + category.image + ')' }"
+      >
+      </div>
+      <h5 class="text-center">{{ category.name }}</h5>
     </div>
   </div>
 </div>
 
-<div class="container mb-5">
+
+
+<hr>
+
+
+<div *ngIf="listPricingProducts.length > 0" class="container mb-5">
   <div class="row">
     <ng-container *ngFor="let product of listPricingProducts">
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">

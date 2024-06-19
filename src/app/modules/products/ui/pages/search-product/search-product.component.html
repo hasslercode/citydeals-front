@@ -20,7 +20,7 @@
 <div class="container mb-5">
   <div class="row">
     <ng-container *ngFor="let product of listProducts">
-      <div *ngIf="product.status == true" class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
         <app-product-card (editProductEvent)="onEditProduct($event)" [editMode]="true"
           [product]="product"></app-product-card>
       </div>

@@ -5,3 +5,10 @@ export interface PricingProduct {
   price: number;
   supermarket_id: number;
 }
+
+export interface UpdatePrice {
+  productId:     number;
+  date:          Date;
+  price:         number;
+  supermarketId: number;
+}

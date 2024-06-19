@@ -1,1 +1,3 @@
-<p>create-discount works!</p>
+<app-dynamic-form (selectChange)="handleSelectChange($event)" [formData]="formData"
+  (submitted)="registerDiscount($event)"></app-dynamic-form>
+<app-modal #modal (accept)="handleAccept($event)"></app-modal>
