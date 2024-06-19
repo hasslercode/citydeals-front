@@ -1,0 +1,81 @@
+<div class="container">
+
+  <form [formGroup]="pricingProductForm" (ngSubmit)="onSubmit()">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h2 class="main-title">Registro de Precio de Producto</h2>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="categoryId" class="form-label">Categoria </label>
+              <select class="form-select form-control input" formControlName="categoryId" id="categoryId" (change)="onSelectChange()">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="pricingProductForm.get('categoryId')!.invalid && pricingProductForm.get('categoryId')!.touched">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="productId" class="form-label">Producto </label>
+              <select class="form-select input form-control" formControlName="productId" id="productId">
+                <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="pricingProductForm.get('productId')!.invalid && pricingProductForm.get('productId')!.touched">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="date" class="form-label">Fecha </label>
+              <input type="date" class="form-control input" formControlName="date" id="date">
+              <div class="invalid-feedback" *ngIf="pricingProductForm.get('date')!.invalid && pricingProductForm.get('date')!.touched">
+                La Fecha es obligatoria.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div formArrayName="prices">
+          <div class="row">
+            <div *ngFor="let priceGroup of prices.controls; let i = index" [formGroupName]="i" class="card mb-3 col-md-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="price-{{i}}" class="form-label">Precio ({{ supermarkets[i].name }}) </label>
+                      <input type="number" class="form-control input" formControlName="price" id="price-{{i}}">
+                      <div class="invalid-feedback" *ngIf="priceGroup.get('price')!.invalid && priceGroup.get('price')!.touched">
+                        Este campo es obligatorio.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <input hidden formControlName="supermarketId" [value]="supermarkets[i].id">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button type="submit" class="btn my-3 btn-primary m-auto text-center justify-content-center d-flex w-25 btn-success">
+      <i class="bi bi-save"></i> Guardar
+    </button>
+
+  </form>
+
+
+</div>
+
+<app-modal #modal (accept)="handleAccept($event)"></app-modal>

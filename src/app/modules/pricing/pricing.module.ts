@@ -8,17 +8,22 @@ import { CompareProductsComponent } from './ui/pages/compare-products/compare-pr
 import { PricingUseCase } from './domain/usecase/pricing.usecase';
 import { PricingGateway } from './domain/gateway/pricing.gateway';
 import { PricingService } from './infraestructure/driven-adapter/pricing.service';
+import { MultiplePricingComponent } from './ui/pages/multiple-pricing/multiple-pricing.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     UpdatePricingComponent,
-    CompareProductsComponent
+    CompareProductsComponent,
+    MultiplePricingComponent
   ],
   imports: [
     CommonModule,
     PricingRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[
     PricingUseCase,

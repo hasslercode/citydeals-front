@@ -20,4 +20,9 @@ export class PricingService extends PricingGateway {
   updatePriceHistory(data: UpdatePrice): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/price-histories`, data);
   }
+
+  updateMultiplePrice(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/price-histories/multiple`, data);
+  }
+
 }

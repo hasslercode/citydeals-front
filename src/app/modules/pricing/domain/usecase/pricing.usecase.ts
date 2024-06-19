@@ -10,7 +10,10 @@ import { UpdatePrice } from '../model/pricing.model';
 export class PricingUseCase {
   constructor(private priceHistoryGateway: PricingGateway) {}
 
-   updatePriceProduct(data: UpdatePrice): Observable<any> {
+  updatePriceProduct(data: UpdatePrice): Observable<any> {
     return this.priceHistoryGateway.updatePriceHistory(data);
+  }
+  updateMultiplePrice(data: any): Observable<any> {
+    return this.priceHistoryGateway.updateMultiplePrice(data);
   }
 }

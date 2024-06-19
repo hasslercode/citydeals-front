@@ -103,6 +103,10 @@ export class UpdatePricingComponent {
     );
   }
 
+  redirectToCreatePricingProduct() {
+    this.router.navigate(['pricing/multiple']);
+  }
+
   handleSelectChange(event: { id: string, value: any }) {
     if(event.id === 'categoryId'){
       this.loadProducts(event.value)

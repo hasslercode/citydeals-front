@@ -4,4 +4,5 @@ import { UpdatePrice } from '../model/pricing.model';
 
 export abstract class PricingGateway {
   abstract updatePriceHistory(data: UpdatePrice): Observable<any>;
+  abstract updateMultiplePrice(data: any): Observable<any>;
 }

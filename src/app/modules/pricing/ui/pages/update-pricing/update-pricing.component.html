@@ -1,2 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-6 text-end">
+      <div class="d-inline-block">
+        <button class="btn btn-primary" (click)="redirectToCreatePricingProduct()">
+          Añadir Múltiples Precios <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <app-dynamic-form [formData]="formData" (selectChange)="handleSelectChange($event)" (submitted)="registerPricingProduct($event)"></app-dynamic-form>
 <app-modal #modal (accept)="handleAccept($event)"></app-modal>

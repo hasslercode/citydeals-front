@@ -23,7 +23,7 @@ export class CompareProductsComponent implements OnInit {
   listPricingProducts: PricedProductsByCategory[] = [];
   categories: ListCategory[] = [];
   defaultImage: string = DEFAULT_IMAGE;
-
+  showCategories = true;
   constructor(
     private router: Router,
     private categoryUsecase: CategoryUseCase,
@@ -58,6 +58,7 @@ export class CompareProductsComponent implements OnInit {
   }
 
   handleCategoryClick(category: ListCategory): void {
+    this.showCategories = false;
     this.productUsecase.getPricedProductsByCategory(category.id).subscribe(
       (products: PricedProductsByCategory[]) => {
         this.listPricingProducts = products;
