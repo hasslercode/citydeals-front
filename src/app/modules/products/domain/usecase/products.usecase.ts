@@ -24,4 +24,9 @@ export class ProductsUsecase {
     return this.discountsGateway.createNewProduct(newProduct);
   }
 
+
+  getProductsByName(name: string): Observable<PricedProductsByCategory[]> { // Nuevo método agregado
+    return this.discountsGateway.getProductsByName(name);
+  }
+
 }

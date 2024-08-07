@@ -8,4 +8,6 @@ export abstract class ProductsGateway {
   abstract getAllProducts(): Observable<ListProduct[]>;
   abstract getAllProducts(): Observable<ListProduct[]>;
   abstract createNewProduct(newProduct: ListProduct): Observable<any>;
+  abstract getProductsByName(name: string): Observable<PricedProductsByCategory[]>; // Nuevo método agregado
+
 }

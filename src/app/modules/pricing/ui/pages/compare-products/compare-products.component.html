@@ -8,11 +8,11 @@
       </div>
     </div>
   </div>
-  <!-- <div class="row justify-content-center">
+  <div class="row justify-content-center">
     <div class="col-md-6 text-center">
       <app-dynamic-form [formData]="formData" (submitted)="searchPricingProduct($event)"></app-dynamic-form>
     </div>
-  </div> -->
+  </div>
 </div>
 
 <div *ngIf="showCategories" class="container">
@@ -39,7 +39,9 @@
   <div class="row">
     <ng-container *ngFor="let product of listPricingProducts">
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 my-2">
-        <app-pricing-product-card [product]="product"></app-pricing-product-card>
+        <app-pricing-product-card
+        [product]="product"
+        (addToShoppingList)="onAddToShoppingList($event)"></app-pricing-product-card>
       </div>
     </ng-container>
   </div>

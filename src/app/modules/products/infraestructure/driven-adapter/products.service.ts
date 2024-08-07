@@ -32,4 +32,8 @@ export class ProductsService extends ProductsGateway {
     return this.http.post<any>(`${this.apiUrl}/products`, newProduct);
   }
 
+  getProductsByName(name: string): Observable<PricedProductsByCategory[]> { // Nuevo método implementado
+    return this.http.get<PricedProductsByCategory[]>(`${this.apiUrl}/products/search?name=${name}`);
+  }
+
 }

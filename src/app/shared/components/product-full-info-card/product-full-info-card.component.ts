@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PricedProductsByCategory } from 'src/app/modules/products/domain/model/product.model';
 
 @Component({
@@ -8,4 +8,9 @@ import { PricedProductsByCategory } from 'src/app/modules/products/domain/model/
 })
 export class ProductFullInfoCardComponent {
   @Input() product!: PricedProductsByCategory;
+  @Output() addToShoppingList = new EventEmitter<PricedProductsByCategory>();
+
+  handleAddToShoppingList() {
+    this.addToShoppingList.emit(this.product);
+  }
 }
