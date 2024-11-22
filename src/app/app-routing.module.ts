@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'discounts/results',
+    redirectTo: 'profile/mindfulbites',
     pathMatch: 'full'
   },
   {
@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/products/products-routing.module').then(
         (m) => m.ProductsRoutingModule
+      ),
+  },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile-routing.module').then(
+        (m) => m.ProfileRoutingModule
       ),
   },
   {

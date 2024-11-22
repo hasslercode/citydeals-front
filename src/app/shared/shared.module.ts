@@ -10,7 +10,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SuperMarketCardComponent } from './components/supermarket-card/supermarket-card.component';
 import { ProductFullInfoCardComponent } from './components/product-full-info-card/product-full-info-card.component';
-
+import { ImageUploadComponent } from './components/image-upload/image-upload.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,15 @@ import { ProductFullInfoCardComponent } from './components/product-full-info-car
     ProductCardComponent,
     SuperMarketCardComponent,
     ProductFullInfoCardComponent,
+    ImageUploadComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -32,7 +40,8 @@ import { ProductFullInfoCardComponent } from './components/product-full-info-car
     ModalComponent,
     ProductCardComponent,
     SuperMarketCardComponent,
-    ProductFullInfoCardComponent
+    ProductFullInfoCardComponent,
+    ImageUploadComponent,
   ],
 })
 export class SharedModule {}

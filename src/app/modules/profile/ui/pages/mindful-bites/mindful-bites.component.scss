@@ -1,0 +1,121 @@
+// Variables de colores
+$primary-color: #d63384;
+$secondary-color: #5e81ac;
+$success-color: #28a745;
+$info-color: #17a2b8;
+$text-color: #2e3440;
+
+// General
+.container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: $secondary-color;
+}
+
+.text-center {
+  color: $text-color;
+}
+
+.justify-center {
+  display: grid;
+  justify-content: center;
+}
+
+// Botón SOS
+.btn-sos {
+  background-color: $primary-color;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Tabs
+.nav-tabs {
+  .nav-link {
+    color: $text-color;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: #fff;
+      border-color: $primary-color $primary-color transparent;
+    }
+  }
+}
+
+.tab-content {
+  border: 1px solid #d8dee9;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+// Progreso Card
+.card {
+  border: 1px solid $info-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: $success-color;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.2rem;
+}
+
+// Alternativas
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bi-heart-fill {
+  color: $primary-color;
+}
+
+// Diario
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lighten($primary-color, 40%);
+  color: $text-color;
+  margin-bottom: 5px;
+  border-radius: 5px;
+
+  .badge {
+    background-color: $secondary-color;
+    color: white;
+  }
+}

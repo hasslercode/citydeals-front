@@ -1,0 +1,22 @@
+<div class="image-upload">
+  <input type="file" (change)="onFileSelected($event)" accept="image/*">
+  <div *ngIf="extractedText">
+    <p><strong>Texto extraído:</strong> {{ extractedText }}</p>
+    <div *ngIf="productName && productPrice">
+      <h3>Nombre del Producto: {{ productName }}</h3>
+      <h3>Precio: {{ productPrice }}</h3>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="products.length > 0">
+  <h3>Productos Encontrados:</h3>
+  <ul>
+    <li *ngFor="let product of products">
+      {{ product.name }} - Precio: {{ product.price | currency:'COP' }}
+    </li>
+  </ul>
+</div>
+<div *ngIf="products.length === 0">
+  <p>No se encontraron productos en el texto proporcionado.</p>
+</div>
