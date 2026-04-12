@@ -17,9 +17,10 @@ import { ModalComponent } from 'src/app/shared/components/modal/modal.component'
 
 
 @Component({
-  selector: 'app-compare-products',
-  templateUrl: './compare-products.component.html',
-  styleUrls: ['./compare-products.component.scss'],
+    selector: 'app-compare-products',
+    templateUrl: './compare-products.component.html',
+    styleUrls: ['./compare-products.component.scss'],
+    standalone: false
 })
 export class CompareProductsComponent implements OnInit {
   @ViewChild('modal') modalInfo!: ModalComponent;

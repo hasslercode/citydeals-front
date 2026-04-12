@@ -3,9 +3,10 @@ import { PricedProductsByCategory } from 'src/app/modules/products/domain/model/
 import { ShoppingListService } from 'src/app/shared/services/shopping-list.service';
 
 @Component({
-  selector: 'app-shopping-list',
-  templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.scss']
+    selector: 'app-shopping-list',
+    templateUrl: './shopping-list.component.html',
+    styleUrls: ['./shopping-list.component.scss'],
+    standalone: false
 })
 export class ShoppingListComponent {
   shoppingList: PricedProductsByCategory[] = [];

@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
-  selector: 'app-multiple-pricing',
-  templateUrl: './multiple-pricing.component.html',
-  styleUrls: ['./multiple-pricing.component.scss'],
+    selector: 'app-multiple-pricing',
+    templateUrl: './multiple-pricing.component.html',
+    styleUrls: ['./multiple-pricing.component.scss'],
+    standalone: false
 })
 export class MultiplePricingComponent {
   @ViewChild('modal') modalInfo!: ModalComponent

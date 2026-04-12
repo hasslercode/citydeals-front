@@ -13,9 +13,10 @@ import { SupermarketUseCase } from 'src/app/modules/supermarket/domain/usecase/s
 import { PricingUseCase } from '../../../domain/usecase/pricing.usecase';
 
 @Component({
-  selector: 'app-update-pricing',
-  templateUrl: './update-pricing.component.html',
-  styleUrls: ['./update-pricing.component.scss']
+    selector: 'app-update-pricing',
+    templateUrl: './update-pricing.component.html',
+    styleUrls: ['./update-pricing.component.scss'],
+    standalone: false
 })
 export class UpdatePricingComponent {
   @ViewChild('modal') modalInfo!: ModalComponent;

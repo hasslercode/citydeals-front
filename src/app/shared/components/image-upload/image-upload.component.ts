@@ -3,9 +3,10 @@ import * as Tesseract from 'tesseract.js';
 import { ChatGptService, ProductInfo } from '../../services/chatgpt.service';
 
 @Component({
-  selector: 'app-image-upload',
-  templateUrl: './image-upload.component.html',
-  styleUrls: ['./image-upload.component.scss']
+    selector: 'app-image-upload',
+    templateUrl: './image-upload.component.html',
+    styleUrls: ['./image-upload.component.scss'],
+    standalone: false
 })
 export class ImageUploadComponent {
   extractedText: string = '';

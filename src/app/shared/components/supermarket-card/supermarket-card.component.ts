@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ListSupermarket, SuperMarket } from '../../../modules/supermarket/domain/model/supermarket.model';
 
 @Component({
-  selector: 'app-supermarket-card',
-  templateUrl: './supermarket-card.component.html',
-  styleUrls: ['./supermarket-card.component.scss']
+    selector: 'app-supermarket-card',
+    templateUrl: './supermarket-card.component.html',
+    styleUrls: ['./supermarket-card.component.scss'],
+    standalone: false
 })
 export class SuperMarketCardComponent {
 

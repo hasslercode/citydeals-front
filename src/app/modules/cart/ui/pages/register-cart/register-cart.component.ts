@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { ModalService } from '../../../../../shared/services/modal.service';
 import { REGISTER_CART_FORM } from '../../utils/cart-fields';
 @Component({
-  selector: 'app-register-cart',
-  templateUrl: './register-cart.component.html',
-  styleUrls: ['./register-cart.component.scss']
+    selector: 'app-register-cart',
+    templateUrl: './register-cart.component.html',
+    styleUrls: ['./register-cart.component.scss'],
+    standalone: false
 })
 export class RegisterCartComponent {
 

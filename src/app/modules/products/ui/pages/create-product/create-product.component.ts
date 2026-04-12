@@ -10,9 +10,10 @@ import { ListCategory } from 'src/app/modules/category/domain/model/category.mod
 import { ListProduct } from '../../../domain/model/product.model';
 
 @Component({
-  selector: 'app-create-product',
-  templateUrl: './create-product.component.html',
-  styleUrls: ['./create-product.component.scss']
+    selector: 'app-create-product',
+    templateUrl: './create-product.component.html',
+    styleUrls: ['./create-product.component.scss'],
+    standalone: false
 })
 export class CreateProductComponent implements OnInit {
 

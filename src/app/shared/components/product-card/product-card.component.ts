@@ -3,9 +3,10 @@ import { ListProduct, Product } from 'src/app/modules/products/domain/model/prod
 import { DEFAULT_IMAGE } from '../../interfaces/responses';
 
 @Component({
-  selector: 'app-product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+    selector: 'app-product-card',
+    templateUrl: './product-card.component.html',
+    styleUrls: ['./product-card.component.scss'],
+    standalone: false
 })
 export class ProductCardComponent {
 

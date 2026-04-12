@@ -13,9 +13,10 @@ import { ListProduct } from 'src/app/modules/products/domain/model/product.model
 import { SupermarketUseCase } from 'src/app/modules/supermarket/domain/usecase/supermarket.usecase';
 import { ListSupermarket } from 'src/app/modules/supermarket/domain/model/supermarket.model';
 @Component({
-  selector: 'app-create-discount',
-  templateUrl: './create-discount.component.html',
-  styleUrls: ['./create-discount.component.scss']
+    selector: 'app-create-discount',
+    templateUrl: './create-discount.component.html',
+    styleUrls: ['./create-discount.component.scss'],
+    standalone: false
 })
 export class CreateDiscountComponent implements OnInit {
 

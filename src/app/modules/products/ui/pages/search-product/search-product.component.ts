@@ -7,9 +7,10 @@ import { ListProduct, Product } from '../../../domain/model/product.model';
 import { ProductsUsecase } from '../../../domain/usecase/products.usecase';
 
 @Component({
-  selector: 'app-search-product',
-  templateUrl: './search-product.component.html',
-  styleUrls: ['./search-product.component.scss']
+    selector: 'app-search-product',
+    templateUrl: './search-product.component.html',
+    styleUrls: ['./search-product.component.scss'],
+    standalone: false
 })
 export class SearchProductComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import { MindfulBitesUsecase } from '../../../domain/usecase/mindful-bites.useca
 import { Progress, Craving } from '../../../domain/model/mindful-bitest.model';
 
 @Component({
-  selector: 'app-mindful-bites',
-  templateUrl: './mindful-bites.component.html',
-  styleUrls: ['./mindful-bites.component.scss'],
+    selector: 'app-mindful-bites',
+    templateUrl: './mindful-bites.component.html',
+    styleUrls: ['./mindful-bites.component.scss'],
+    standalone: false
 })
 export class MindfulBitesComponent implements OnInit {
   progress: Progress = { daysWithoutGivingIn: 0, caloriesSaved: 0 };

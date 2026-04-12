@@ -19,9 +19,10 @@ import { FormDataFormat } from '../../interfaces/custom-form';
 import { Validator } from '../../helpers/validator.helper';
 
 @Component({
-  selector: 'app-dynamic-form',
-  templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss'],
+    selector: 'app-dynamic-form',
+    templateUrl: './dynamic-form.component.html',
+    styleUrls: ['./dynamic-form.component.scss'],
+    standalone: false
 })
 export class DynamicFormComponent implements OnInit {
   @Input() formData: FormDataFormat = {

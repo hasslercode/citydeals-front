@@ -6,9 +6,10 @@ import { ListSupermarket, SuperMarket } from '../../../domain/model/supermarket.
 import { SupermarketUseCase } from '../../../domain/usecase/supermarket.usecase';
 
 @Component({
-  selector: 'app-search-supermarkets',
-  templateUrl: './search-supermarkets.component.html',
-  styleUrls: ['./search-supermarkets.component.scss'],
+    selector: 'app-search-supermarkets',
+    templateUrl: './search-supermarkets.component.html',
+    styleUrls: ['./search-supermarkets.component.scss'],
+    standalone: false
 })
 export class SearchSupermarketsComponent implements OnInit {
   formData: FormDataFormat = SEARCH_SUPERMARKET_FORM;

@@ -8,9 +8,10 @@ import { ListSupermarket } from '../../../domain/model/supermarket.model';
 import { SupermarketUseCase } from '../../../domain/usecase/supermarket.usecase';
 
 @Component({
-  selector: 'app-create-supermarket',
-  templateUrl: './create-supermarket.component.html',
-  styleUrls: ['./create-supermarket.component.scss']
+    selector: 'app-create-supermarket',
+    templateUrl: './create-supermarket.component.html',
+    styleUrls: ['./create-supermarket.component.scss'],
+    standalone: false
 })
 export class CreateSupermarketComponent {
   @ViewChild('modal') modalInfo!: ModalComponent;

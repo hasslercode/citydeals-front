@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { DiscountsToday } from '../../../domain/model/discount.model';
 import { DiscountsUsecase } from '../../../domain/usecase/discounts.usecase';
 @Component({
-  selector: 'app-show-discounts',
-  templateUrl: './show-discounts.component.html',
-  styleUrls: ['./show-discounts.component.scss'],
+    selector: 'app-show-discounts',
+    templateUrl: './show-discounts.component.html',
+    styleUrls: ['./show-discounts.component.scss'],
+    standalone: false
 })
 export class ShowDiscountsComponent {
   currentDate: Date;
