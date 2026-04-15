@@ -1,0 +1,32 @@
+[
+  {
+    "id": "OLI_TV_FANATICOS_0426",
+    "title": "TV 55\" UHD subsidiado con Tarjeta Olímpica",
+    "type": "discount",
+    "category": "retail",
+    "source": "Olímpica",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-03-13",
+    "activeTo": "2026-04-12",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.olimpica.com/terminos-y-condiciones-de-promociones",
+    "description": "Televisor OLIMPO UHD 55\" subsidiado a $1.099.000 (PVP $2.999.900) pagando con Tarjeta Olímpica, tras acumular compras previas de $150.000."
+  },
+  {
+    "id": "OLI_BONO_APP_0426",
+    "title": "Cupón de $15.000 en primera compra digital",
+    "type": "discount",
+    "category": "supermarket",
+    "source": "Olímpica",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.olimpica.com/terminos-y-condiciones-de-promociones",
+    "description": "Cupón de $15.000 para clientes nuevos en canales digitales por primera compra mínima de $50.000 en supermercado Olímpica."
+  }
+]

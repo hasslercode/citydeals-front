@@ -1,23 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map, switchMap } from 'rxjs';
 import {
   BenefitFilters,
   BenefitRepository,
 } from '../../domain/interfaces/benefit-repository.interface';
 import { Benefit, WeekDay } from '../../domain/models/benefit.model';
+import { BenefitSourceFile } from '../../domain/models/source.model';
 import { getCurrentWeekDay } from '../../../../shared/utils/day.utils';
 
 @Injectable()
 export class LocalBenefitRepository implements BenefitRepository {
-  private readonly endpoint = 'assets/benefits.json';
+  private readonly sourcesIndexUrl = 'assets/benefits/sources-index.json';
 
   constructor(private readonly http: HttpClient) {}
 
   getBenefits(): Observable<Benefit[]> {
-    return this.http
-      .get<Benefit[]>(this.endpoint)
-      .pipe(map((benefits) => benefits.filter((benefit) => this.isActiveNow(benefit))));
+    return this.http.get<BenefitSourceFile[]>(this.sourcesIndexUrl).pipe(
+      switchMap((sources) =>
+        forkJoin(sources.map((s) => this.http.get<Benefit[]>(s.file)))
+      ),
+      map((groups) => groups.flat().filter((benefit) => this.isActiveNow(benefit)))
+    );
   }
 
   getBenefitsByDay(day: WeekDay): Observable<Benefit[]> {
@@ -43,15 +47,20 @@ export class LocalBenefitRepository implements BenefitRepository {
 
         return benefits.filter((benefit) => {
           const sourceMatch =
-            !filters.source ||
-            benefit.source.toLowerCase().includes(filters.source.toLowerCase());
+            !filters.sources?.length ||
+            filters.sources.some((s) =>
+              benefit.source.toLowerCase().includes(s.toLowerCase())
+            );
           const categoryMatch =
             !filters.category ||
             benefit.category.toLowerCase() === filters.category.toLowerCase();
           const typeMatch = !filters.type || benefit.type === filters.type;
-          const onlyTodayMatch = !filters.onlyToday || this.appliesOnDay(benefit, today);
+          const cardTypeMatch =
+            !filters.cardType || benefit.cardType === filters.cardType;
+          const onlyTodayMatch =
+            !filters.onlyToday || this.appliesOnDay(benefit, today);
 
-          return sourceMatch && categoryMatch && typeMatch && onlyTodayMatch;
+          return sourceMatch && categoryMatch && typeMatch && cardTypeMatch && onlyTodayMatch;
         });
       })
     );

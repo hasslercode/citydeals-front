@@ -1,0 +1,32 @@
+[
+  {
+    "id": "NU_MercadoPago2026",
+    "title": "Compras sin interés con Tarjeta Nu en Mercado Pago",
+    "type": "opportunity",
+    "category": "retail",
+    "source": "Nu Bank",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2025-06-03",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://blog.nu.com.co/compras-sin-intereses-con-tu-tarjeta-de-credito-nu/",
+    "description": "Con Tarjeta de Crédito Nu puedes comprar en comercios aliados a Mercado Pago y pagar en cuotas sin intereses."
+  },
+  {
+    "id": "NU_MAC_CENTER_0426",
+    "title": "0% de interés en Apple en Mac Center",
+    "type": "opportunity",
+    "category": "retail",
+    "source": "Nu Bank",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://blog.nu.com.co/beneficios-de-verdad-beneficios-nu/",
+    "description": "Financiación de hardware Apple a tasa de 0% de interés difiriendo los pagos a 9 o 12 meses. Aplicable en compras superiores a $600.000."
+  }
+]

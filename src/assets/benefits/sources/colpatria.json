@@ -1,0 +1,17 @@
+[
+  {
+    "id": "COLPATRIA_PASAJES_0426",
+    "title": "10% de descuento en pasajes ida y vuelta",
+    "type": "discount",
+    "category": "transport",
+    "source": "Scotiabank Colpatria",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-04-01",
+    "activeTo": "2026-04-30",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.scotiabank.com.pe/Personas/beneficios/default",
+    "description": "Descuento del 10% durante abril de 2026 con tarjetas de crédito y débito de Scotiabank Colpatria en tiendas físicas aliadas."
+  }
+]

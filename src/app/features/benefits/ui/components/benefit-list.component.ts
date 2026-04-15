@@ -4,124 +4,93 @@ import { Benefit } from '../../domain/models/benefit.model';
 import { BenefitCardComponent } from './benefit-card.component';
 
 @Component({
-    selector: 'app-benefit-list',
-    imports: [CommonModule, BenefitCardComponent],
-    template: `
-    <div class="list" *ngIf="benefits.length; else emptyState">
+  selector: 'app-benefit-list',
+  standalone: true,
+  imports: [CommonModule, BenefitCardComponent],
+  template: `
+    <div class="list" *ngIf="pagedBenefits.length; else emptyState">
       <app-benefit-card *ngFor="let benefit of pagedBenefits" [benefit]="benefit" />
     </div>
 
     <nav class="pagination" *ngIf="totalPages > 1">
-      <button type="button" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Anterior</button>
-
-      <button
-        type="button"
-        *ngFor="let page of pages"
-        (click)="goToPage(page)"
-        [class.active]="page === currentPage"
-      >
-        {{ page }}
-      </button>
-
-      <button type="button" (click)="goToNextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+      <button type="button" (click)="goToPreviousPage()" [disabled]="currentPage === 1">‹</button>
+      <button *ngFor="let page of pages" type="button" (click)="goToPage(page)"
+        [class.active]="page === currentPage">{{ page }}</button>
+      <button type="button" (click)="goToNextPage()" [disabled]="currentPage === totalPages">›</button>
     </nav>
 
     <ng-template #emptyState>
-      <p class="empty">No hay beneficios para los filtros seleccionados.</p>
+      <div class="empty">
+        <span class="empty-icon">🔍</span>
+        <p>No hay beneficios para los filtros seleccionados.</p>
+      </div>
     </ng-template>
   `,
-    styles: [
-        `
-      .list {
-        display: grid;
-        gap: 0.8rem;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        grid-auto-rows: 1fr;
-        align-items: stretch;
-      }
+  styles: [`
+    .list {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
 
-      app-benefit-card {
-        height: 100%;
-      }
+    .pagination {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+    }
 
-      .pagination {
-        margin-top: 0.85rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        justify-content: center;
-      }
+    .pagination button {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      min-width: 2rem;
+      padding: 0.3rem 0.55rem;
+      background: #fff;
+      color: #374151;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.14s;
+    }
 
-      .pagination button {
-        border: 1px solid #cbd5e1;
-        border-radius: 0.55rem;
-        min-width: 2rem;
-        padding: 0.3rem 0.55rem;
-        background: #ffffff;
-        color: #334155;
-        font-size: 0.82rem;
-        font-weight: 600;
-        cursor: pointer;
-      }
+    .pagination button:hover:not(:disabled) { background: #f3f4f6; border-color: #6366f1; }
+    .pagination button.active { background: #4f46e5; color: #fff; border-color: #4f46e5; font-weight: 700; }
+    .pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
 
-      .pagination button.active {
-        background: #4338ca;
-        border-color: #4338ca;
-        color: #ffffff;
-      }
+    .empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 3rem 1rem;
+      color: #9ca3af;
+      text-align: center;
+    }
 
-      .pagination button:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .empty {
-        color: #64748b;
-        margin: 0.2rem 0;
-      }
-    `,
-    ]
+    .empty-icon { font-size: 2.5rem; }
+    .empty p { margin: 0; font-size: 0.9rem; }
+  `]
 })
 export class BenefitListComponent implements OnChanges {
   @Input() benefits: Benefit[] = [];
-  @Input() pageSize = 6;
 
+  readonly pageSize = 12;
   currentPage = 1;
+  pagedBenefits: Benefit[] = [];
+
+  get totalPages(): number { return Math.ceil(this.benefits.length / this.pageSize); }
+  get pages(): number[] { return Array.from({ length: this.totalPages }, (_, i) => i + 1); }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['benefits']) {
-      this.currentPage = 1;
-    }
+    if (changes['benefits']) { this.currentPage = 1; this.updatePage(); }
   }
 
-  get totalPages(): number {
-    return Math.max(1, Math.ceil(this.benefits.length / this.pageSize));
-  }
+  goToPage(page: number): void { this.currentPage = page; this.updatePage(); }
+  goToPreviousPage(): void { if (this.currentPage > 1) { this.currentPage--; this.updatePage(); } }
+  goToNextPage(): void { if (this.currentPage < this.totalPages) { this.currentPage++; this.updatePage(); } }
 
-  get pages(): number[] {
-    return Array.from({ length: this.totalPages }, (_, index) => index + 1);
-  }
-
-  get pagedBenefits(): Benefit[] {
+  private updatePage(): void {
     const start = (this.currentPage - 1) * this.pageSize;
-    return this.benefits.slice(start, start + this.pageSize);
-  }
-
-  goToPreviousPage(): void {
-    if (this.currentPage > 1) {
-      this.currentPage -= 1;
-    }
-  }
-
-  goToNextPage(): void {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage += 1;
-    }
-  }
-
-  goToPage(page: number): void {
-    if (page >= 1 && page <= this.totalPages) {
-      this.currentPage = page;
-    }
+    this.pagedBenefits = this.benefits.slice(start, start + this.pageSize);
   }
 }

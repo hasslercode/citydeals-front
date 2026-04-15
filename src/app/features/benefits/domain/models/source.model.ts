@@ -1,5 +1,12 @@
-export interface Source {
+export type SourceKind = 'bank' | 'card' | 'store' | 'program' | 'other';
+
+export interface BenefitSource {
   id: string;
   name: string;
-  kind: 'bank' | 'store' | 'wallet' | 'other';
+  kind: SourceKind;
+  color: string;
+}
+
+export interface BenefitSourceFile extends BenefitSource {
+  file: string;
 }

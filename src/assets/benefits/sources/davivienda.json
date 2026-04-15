@@ -1,0 +1,62 @@
+[
+  {
+    "id": "DAV_EXITO_CARNES_0426",
+    "title": "20% de descuento en carnes Éxito y Carulla los miércoles",
+    "type": "discount",
+    "category": "supermarket",
+    "source": "Davivienda",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-04-30",
+    "appliesEveryDay": false,
+    "validDays": ["wednesday"],
+    "termsUrl": "https://ofertas.comprasdavivienda.com/producto/supermercados--otro--carulla-m-surtimax--super-inter-exito.com-master-card-3096",
+    "description": "Mínimo 20% de descuento en la categoría de carnes todos los miércoles al pagar con Davivienda Mastercard en Éxito, Surtimax, SuperInter y Carulla."
+  },
+  {
+    "id": "DAV_CARULLA_VIERNES_0426",
+    "title": "25% de descuento en alimentos Carulla online los viernes",
+    "type": "discount",
+    "category": "supermarket",
+    "source": "Davivienda",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-04-30",
+    "appliesEveryDay": false,
+    "validDays": ["friday"],
+    "termsUrl": "https://ofertas.comprasdavivienda.com/producto/supermercados--porcentaje--carulla-master-card-1969",
+    "description": "25% de descuento en alimentos el segundo y cuarto viernes de cada mes pagando con Davivienda Mastercard en app y web Carulla."
+  },
+  {
+    "id": "DAV_MEDIPIEL_FLASH_0426",
+    "title": "30% de descuento especial en Medipiel",
+    "type": "discount",
+    "category": "health",
+    "source": "Davivienda",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-04-23",
+    "activeTo": "2026-04-26",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.davibank.com/alianzas",
+    "description": "Hasta un 30% de descuento en productos dermatológicos de Medipiel. Promoción relámpago pagando con DAVIbank y el código especial."
+  },
+  {
+    "id": "DAV_SUNGLASS_20_0426",
+    "title": "20% de descuento en Sunglass Hut y GMO",
+    "type": "discount",
+    "category": "retail",
+    "source": "Davivienda",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.davibank.com/alianzas",
+    "description": "20% OFF en gafas de sol en tiendas físicas y aeropuertos al mencionar la promoción en caja y pagar con DAVIbank."
+  }
+]

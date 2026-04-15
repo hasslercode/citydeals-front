@@ -1,0 +1,32 @@
+[
+  {
+    "id": "AVV_EXITO_FRUTAS_0426",
+    "title": "30% de descuento en frutas y verduras Éxito los martes",
+    "type": "discount",
+    "category": "supermarket",
+    "source": "AV Villas",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-06-30",
+    "appliesEveryDay": false,
+    "validDays": ["tuesday"],
+    "termsUrl": "https://www.avvillas.com.co/alianzas",
+    "description": "Descuento mínimo del 30% en productos agrícolas seleccionados en puntos físicos Éxito. Tope máximo de descuento $300.000."
+  },
+  {
+    "id": "AVV_EXITO_CARNES_0426",
+    "title": "20% de descuento en carnes Éxito los miércoles",
+    "type": "discount",
+    "category": "supermarket",
+    "source": "AV Villas",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-06-24",
+    "appliesEveryDay": false,
+    "validDays": ["wednesday"],
+    "termsUrl": "https://www.avvillas.com.co/alianzas",
+    "description": "Mínimo 20% de descuento en cortes seleccionados de carne de res y cerdo en cajas de puntos físicos Éxito."
+  }
+]

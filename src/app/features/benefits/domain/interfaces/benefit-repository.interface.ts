@@ -3,10 +3,12 @@ import { Benefit, WeekDay } from '../models/benefit.model';
 import { BenefitType } from '../enums/benefit-type.enum';
 
 export interface BenefitFilters {
-  source?: string;
+  sources?: string[];
   category?: string;
   type?: BenefitType;
+  cardType?: string;
   onlyToday?: boolean;
+  day?: WeekDay;
 }
 
 export abstract class BenefitRepository {

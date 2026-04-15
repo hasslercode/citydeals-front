@@ -1,0 +1,32 @@
+[
+  {
+    "id": "BB_Taxes2026",
+    "title": "Pagos de impuestos ya no acumulan Puntos Colombia",
+    "type": "info",
+    "category": "other",
+    "source": "Bancolombia",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-04-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.bancolombia.com/personas/productos/tarjetas/credito-negocios",
+    "description": "A partir del 1 de abril de 2026, los pagos de impuestos con tarjetas de crédito empresariales Bancolombia dejan de acumular Puntos Colombia."
+  },
+  {
+    "id": "BANCOLOMBIA_LEVIS_0426",
+    "title": "40% de descuento en colección Levi's",
+    "type": "discount",
+    "category": "retail",
+    "source": "Bancolombia",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-03-01",
+    "activeTo": "2026-05-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.levi.com.co/rebajas/bancolombia",
+    "description": "Descuento del 40% en líneas Jeans 501 y Jeans 725, pagando exclusivamente con medios de pago Bancolombia."
+  }
+]
