@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "ng build --configuration=production --base-href=/citydeals-front/ --deploy-url=/citydeals-front/",
-    "deploy": "gh-pages -d dist/citydeals-front"
+    "deploy": "gh-pages -d dist/citydeals-front/browser"
   },
   "private": true,
   "dependencies": {
