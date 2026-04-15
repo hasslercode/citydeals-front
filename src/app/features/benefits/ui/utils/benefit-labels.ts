@@ -33,6 +33,7 @@ const categoryLabelMap: Record<string, string> = {
   food:          'Comida',
   technology:    'Tecnología',
   travel:        'Viajes',
+  home:          'Hogar',
 };
 
 export const getCategoryLabel = (category: string): string =>
@@ -50,6 +51,7 @@ export const categoryIconMap: Record<string, string> = {
   entertainment: '🎬',
   technology:    '💻',
   travel:        '✈️',
+  home:          '🏠',
 };
 
 export const getCategoryIcon = (category: string): string =>

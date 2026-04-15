@@ -37,6 +37,7 @@ const SOURCE_KIND: Record<string, string> = {
   'Terpel':                  'store',
   'Convenio Policía Nacional':'program',
   'Convenio Policía':        'program',
+  'Prosegur Alarms':          'store',
 };
 
 type KindTab = '' | 'bank' | 'card';

@@ -11,5 +11,6 @@
   { "id": "amex",           "name": "American Express",        "kind": "card",    "color": "#007BBF", "file": "assets/benefits/sources/amex.json" },
   { "id": "terpel",         "name": "Terpel",                  "kind": "store",   "color": "#F39325", "file": "assets/benefits/sources/terpel.json" },
   { "id": "colpatria",      "name": "Scotiabank Colpatria",    "kind": "bank",    "color": "#EC111A", "file": "assets/benefits/sources/colpatria.json" },
-  { "id": "policia",        "name": "Convenio Policía",        "kind": "program", "color": "#006341", "file": "assets/benefits/sources/policia.json" }
+  { "id": "policia",      "name": "Convenio Policía",        "kind": "program", "color": "#006341", "file": "assets/benefits/sources/policia.json" },
+  { "id": "prosegur",    "name": "Prosegur Alarms",          "kind": "store",   "color": "#E30613", "file": "assets/benefits/sources/prosegur.json" }
 ]

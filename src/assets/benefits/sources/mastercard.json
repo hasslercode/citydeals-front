@@ -60,6 +60,21 @@
     "description": "10% de cashback en cuenta Flypass al usar tu tarjeta Mastercard en el servicio Pasa y Paga (hasta 3 cashbacks al mes)."
   },
   {
+    "id": "MC_COLOMBIA_CAMISETA_10_2026",
+    "title": "10% de descuento en camiseta Selección Colombia",
+    "type": "discount",
+    "category": "retail",
+    "source": "Mastercard",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-04-09",
+    "activeTo": "2026-05-04",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": null,
+    "description": "10% de descuento en camiseta oficial de la Selección Colombia pagando con Mastercard. Tope $200.000."
+  },
+  {
     "id": "MC_SuperCarnes2026",
     "title": "20% de descuento en carnes con Mastercard",
     "type": "discount",
