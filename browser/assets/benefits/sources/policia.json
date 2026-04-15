@@ -1,0 +1,32 @@
+[
+  {
+    "id": "POLICIA_SMARTFIT_0426",
+    "title": "Tarifa institucional Smart Fit ($99.900)",
+    "type": "opportunity",
+    "category": "health",
+    "source": "Convenio Policía Nacional",
+    "cardType": null,
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.policia.gov.co/sites/default/files/descargables/Cartilla_Abril_2026.pdf",
+    "description": "Tarifa plana sin costo de inscripción ni mantenimiento con código SMARTFITMDEFENSA25. Exclusivo para miembros de Bienestar Social PONAL."
+  },
+  {
+    "id": "POLICIA_FABERCASTELL_0426",
+    "title": "30% de descuento en Faber-Castell virtual",
+    "type": "discount",
+    "category": "retail",
+    "source": "Convenio Policía Nacional",
+    "cardType": null,
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.policia.gov.co/sites/default/files/descargables/Cartilla_Abril_2026.pdf",
+    "description": "30% de reducción en la tienda virtual de Faber-Castell Colombia al introducir el código institucional PATRIAFABER en el checkout."
+  }
+]

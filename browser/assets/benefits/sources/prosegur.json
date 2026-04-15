@@ -1,0 +1,17 @@
+[
+  {
+    "id": "PROSEGUR_ALARMAS_15_2026",
+    "title": "15% de descuento en sistema de alarmas Prosegur",
+    "type": "discount",
+    "category": "home",
+    "source": "Prosegur Alarms",
+    "cardType": "debit",
+    "cardLevel": null,
+    "activeFrom": "2026-02-17",
+    "activeTo": "2026-06-30",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": null,
+    "description": "15% de descuento en mensualidad de sistema de alarma por 24 meses para clientes Bancolombia."
+  }
+]

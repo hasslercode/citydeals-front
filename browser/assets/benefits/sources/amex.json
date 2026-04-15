@@ -1,0 +1,17 @@
+[
+  {
+    "id": "AMEX_CINE_2X1_0426",
+    "title": "2x1 permanente en boletería de cine",
+    "type": "opportunity",
+    "category": "other",
+    "source": "American Express",
+    "cardType": "amex",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.americanexpress.com/es-co/network/beneficios/experiencias/",
+    "description": "Beneficio 2x1 en boletería de cines aliados. Incluye la oportunidad de adquirir 2 crispetas pequeñas a precio especial de $17.300 COP."
+  }
+]

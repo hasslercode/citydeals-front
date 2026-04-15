@@ -1,0 +1,32 @@
+[
+  {
+    "id": "BBVA_ML_15DTO_0426",
+    "title": "15% de descuento y 0% de interés en MercadoLibre",
+    "type": "discount",
+    "category": "retail",
+    "source": "BBVA",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-16",
+    "activeTo": "2026-04-30",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.bbva.com.co/personas/productos/tarjetas/beneficios/mercadolibre.html",
+    "description": "15% de descuento y tasa de 0% de interés para compras diferidas a 2, 3, 6, 9 y 12 cuotas dentro del ecosistema de MercadoLibre."
+  },
+  {
+    "id": "BBVA_KFC_MARTES_0426",
+    "title": "20% de descuento en KFC los martes",
+    "type": "discount",
+    "category": "restaurant",
+    "source": "BBVA",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": false,
+    "validDays": ["tuesday"],
+    "termsUrl": "https://www.bbva.com.co/personas/productos/tarjetas/beneficios.html",
+    "description": "20% de descuento todos los martes en KFC pagando con tarjetas BBVA, habilitado también para pago con puntos."
+  }
+]

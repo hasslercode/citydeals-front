@@ -1,0 +1,32 @@
+[
+  {
+    "id": "OCC_FARMATODO_25K_0426",
+    "title": "$25.000 de descuento en Farmatodo digital",
+    "type": "discount",
+    "category": "health",
+    "source": "Banco de Occidente",
+    "cardType": "mastercard",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.bancodeoccidente.com.co/tarjetas-credito/promociones",
+    "description": "Descuento de $25.000 en compras superiores a $100.000 en web o app de Farmatodo, ingresando el cupón MASTER01."
+  },
+  {
+    "id": "OCC_ASSISTCARD_15_0426",
+    "title": "15% de descuento y 0% de interés en Assist Card",
+    "type": "discount",
+    "category": "other",
+    "source": "Banco de Occidente",
+    "cardType": "credit",
+    "cardLevel": null,
+    "activeFrom": "2026-01-01",
+    "activeTo": "2026-12-31",
+    "appliesEveryDay": true,
+    "validDays": [],
+    "termsUrl": "https://www.bancodeoccidente.com.co/tarjetas-credito/promociones",
+    "description": "Tasa 0% de interés y hasta 15% de descuento en productos de asistencia al viajero con Assist Card."
+  }
+]

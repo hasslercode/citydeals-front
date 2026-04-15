@@ -1,0 +1,16 @@
+[
+  { "id": "bancolombia",    "name": "Bancolombia",             "kind": "bank",    "color": "#FDB931", "file": "assets/benefits/sources/bancolombia.json" },
+  { "id": "mastercard",     "name": "Mastercard",              "kind": "card",    "color": "#EB001B", "file": "assets/benefits/sources/mastercard.json" },
+  { "id": "nubank",         "name": "Nu Bank",                 "kind": "bank",    "color": "#820AD1", "file": "assets/benefits/sources/nubank.json" },
+  { "id": "falabella",      "name": "Banco Falabella",         "kind": "bank",    "color": "#008751", "file": "assets/benefits/sources/banco-falabella.json" },
+  { "id": "bbva",           "name": "BBVA",                    "kind": "bank",    "color": "#004481", "file": "assets/benefits/sources/bbva.json" },
+  { "id": "davivienda",     "name": "Davivienda",              "kind": "bank",    "color": "#C8102E", "file": "assets/benefits/sources/davivienda.json" },
+  { "id": "occidente",      "name": "Banco de Occidente",      "kind": "bank",    "color": "#0066CC", "file": "assets/benefits/sources/banco-occidente.json" },
+  { "id": "avvillas",       "name": "AV Villas",               "kind": "bank",    "color": "#0057A8", "file": "assets/benefits/sources/av-villas.json" },
+  { "id": "olimpica",       "name": "Olímpica",                "kind": "store",   "color": "#E31837", "file": "assets/benefits/sources/olimpica.json" },
+  { "id": "amex",           "name": "American Express",        "kind": "card",    "color": "#007BBF", "file": "assets/benefits/sources/amex.json" },
+  { "id": "terpel",         "name": "Terpel",                  "kind": "store",   "color": "#F39325", "file": "assets/benefits/sources/terpel.json" },
+  { "id": "colpatria",      "name": "Scotiabank Colpatria",    "kind": "bank",    "color": "#EC111A", "file": "assets/benefits/sources/colpatria.json" },
+  { "id": "policia",      "name": "Convenio Policía",        "kind": "program", "color": "#006341", "file": "assets/benefits/sources/policia.json" },
+  { "id": "prosegur",    "name": "Prosegur Alarms",          "kind": "store",   "color": "#E30613", "file": "assets/benefits/sources/prosegur.json" }
+]
